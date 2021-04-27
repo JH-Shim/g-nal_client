@@ -1,4 +1,165 @@
-.App {
+* {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-family: -apple-system;
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 110vh;
+  /* min-height: 500px; */
+}
+
+a {
+  color: black;
+  margin: 0.7rem;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: blue;
+}
+
+/* ! display: flex ======================= */
+.container_flex_row {
+  display: flex;
+}
+
+.container_flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.responsive_flex_r2c {
+  display: flex;
+}
+
+.responsive_flex_c2r {
+  display: flex;
+  flex-direction: column;
+}
+/* ! w =================================== */
+.w10 {
+  flex: 10 1 0%;
+}
+
+.w30 {
+  flex: 30 1 0%;
+}
+
+.w70 {
+  flex: 70 1 0%;
+}
+/* ! h =================================== */
+.h10 {
+  flex: 10 1 0%;
+}
+
+.h15 {
+  flex: 15 1 0%;
+}
+
+.h70 {
+  flex: 70 1 0%;
+}
+/* ! ===================================== */
+
+/* ! display: grid ======================= */
+.container_grid {
+  display: grid;
+}
+
+.center_grid {
+  place-items: center;
+  /* https://css-tricks.com/almanac/properties/p/place-items/ */
+  /* align-items: center; */
+  /* justify-items: center; */
+}
+/* ! ===================================== */
+
+/* .text_center {
+  text-align: center;
+} */
+
+.sticky_nav {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: solid 1px rgb(212, 212, 212);
+}
+
+.absolute_right1_nav {
+  margin: 1.5rem;
+  right: 0;
+  position: absolute;
+}
+
+.absolute_right2_nav {
+  display: none;
+}
+
+.absolute_left_nav {
+  display: none;
+}
+
+.hamburger_closed {
+  display: none;
+}
+
+.hamburger_open {
+  display: inline-block;
+}
+
+.footer {
+  border-top: solid 1px rgb(212, 212, 212);
+}
+
+@media (max-width: 500px) {
+  .responsive_flex_r2c {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .responsive_flex_c2r {
+    display: flex;
+  }
+
+  .absolute_right1_nav {
+    display: none;
+  }
+
+  .absolute_right2_nav {
+    display: inline-block;
+    margin: 1.5rem;
+    right: 0;
+    position: absolute;
+  }
+
+  .absolute_left_nav {
+    display: inline-block;
+    margin: 1.5rem;
+    left: 0;
+    position: absolute;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +196,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
