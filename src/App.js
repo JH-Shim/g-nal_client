@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './App.css';
 import Nav from './components/common/Nav';
-import Hamburger from './components/common/Hamburger';
+import Menu from './components/common/Menu';
 import Footer from './components/common/Footer';
 import PageIndex from './pages/PageIndex';
 import PageSignIn from './pages/PageSignIn';
@@ -16,7 +16,7 @@ axios.defaults.withCredentials = true;
 
 function App() {
   const [isLogin, setIsLogin] = useState(true);
-  const [isHamburger, setIsHamburger] = useState(false);
+  const [isMenu, setIsMenu] = useState(false);
 
   const resetState = () => {
     setIsLogin(false);
@@ -24,8 +24,8 @@ function App() {
 
   return isLogin ? (
     <Router>
-      <Nav isHamburger={isHamburger} setIsHamburger={setIsHamburger} />
-      <Hamburger isHamburger={isHamburger} />
+      <Nav isMenu={isMenu} setIsMenu={setIsMenu} />
+      <Menu isMenu={isMenu} />
       <Switch>
         <Route exact={true} path="/">
           <PageIndex />

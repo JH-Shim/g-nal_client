@@ -7,7 +7,7 @@ import React from 'react';
 function Map({}) {
   // const history = useHistory();
 
-  return <div className="w70">Map</div>;
+  return <div className="flex70">Map</div>;
 }
 
 export default Map;
