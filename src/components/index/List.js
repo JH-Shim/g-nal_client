@@ -4,7 +4,7 @@ import React from 'react';
 function List({}) {
   // const history = useHistory();
 
-  return <div className="w30">List</div>;
+  return <div className="flex30">List</div>;
 }
 
 export default List;

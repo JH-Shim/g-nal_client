@@ -30,8 +30,22 @@ a:visited {
 }
 
 a:hover {
-  color: blue;
+  color: black;
 }
+
+/* ! vh, vw ============================== */
+.vh10 {
+  height: 4rem;
+}
+
+.vh15 {
+  height: 15vh;
+}
+
+.vh70 {
+  height: 70vh;
+}
+/* ! ===================================== */
 
 /* ! display: flex ======================= */
 .container_flex_row {
@@ -51,28 +65,20 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
-/* ! w =================================== */
-.w10 {
+
+.flex10 {
   flex: 10 1 0%;
 }
 
-.w30 {
-  flex: 30 1 0%;
-}
-
-.w70 {
-  flex: 70 1 0%;
-}
-/* ! h =================================== */
-.h10 {
-  flex: 10 1 0%;
-}
-
-.h15 {
+.flex15 {
   flex: 15 1 0%;
 }
 
-.h70 {
+.flex30 {
+  flex: 30 1 0%;
+}
+
+.flex70 {
   flex: 70 1 0%;
 }
 /* ! ===================================== */
@@ -116,11 +122,11 @@ a:hover {
   display: none;
 }
 
-.hamburger_closed {
+.menu_closed {
   display: none;
 }
 
-.hamburger_open {
+.menu_open {
   display: inline-block;
 }
 

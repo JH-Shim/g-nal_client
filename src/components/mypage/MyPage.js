@@ -4,7 +4,7 @@ import React from 'react';
 function MyPage({}) {
   // const history = useHistory();
 
-  return <div className="h70">마이페이지</div>;
+  return <div className="flex70">마이페이지</div>;
 }
 
 export default MyPage;

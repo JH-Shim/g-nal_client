@@ -2,15 +2,12 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 // import axios from 'axios';
 
-function Nav({ isHamburger, setIsHamburger }) {
+function Nav({ isMenu, setIsMenu }) {
   // const history = useHistory();
 
   return (
-    <div className="h10 container_grid center_grid sticky_nav">
-      <span
-        className="absolute_left_nav"
-        onClick={() => setIsHamburger(!isHamburger)}
-      >
+    <div className="flex10 container_grid center_grid sticky_nav">
+      <span className="absolute_left_nav" onClick={() => setIsMenu(!isMenu)}>
         ☰
       </span>
       <span>
