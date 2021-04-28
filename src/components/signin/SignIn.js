@@ -4,7 +4,7 @@ import React from 'react';
 function SignIn({}) {
   // const history = useHistory();
 
-  return <div className="flex70">로그인</div>;
+  return <div className="rem35">로그인</div>;
 }
 
 export default SignIn;

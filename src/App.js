@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 
 import './App.css';
-import Nav from './components/common/Nav';
 import Menu from './components/common/Menu';
+import Nav from './components/common/Nav';
 import Footer from './components/common/Footer';
 import PageIndex from './pages/PageIndex';
 import PageSignIn from './pages/PageSignIn';
@@ -24,8 +24,8 @@ function App() {
 
   return isLogin ? (
     <Router>
-      <Nav isMenu={isMenu} setIsMenu={setIsMenu} />
-      <Menu isMenu={isMenu} />
+      <Menu isMenu={isMenu} setIsMenu={setIsMenu} />
+      <Nav setIsMenu={setIsMenu} />
       <Switch>
         <Route exact={true} path="/">
           <PageIndex />

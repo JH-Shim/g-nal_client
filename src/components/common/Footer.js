@@ -5,7 +5,7 @@ import React from 'react';
 function Footer({}) {
   // const history = useHistory();
 
-  return <div className="flex15 footer">Footer</div>;
+  return <div className="rem7 footer">Footer</div>;
 }
 
 export default Footer;
