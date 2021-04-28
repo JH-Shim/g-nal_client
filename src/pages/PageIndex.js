@@ -4,7 +4,7 @@ import List from '../components/index/List';
 
 function PageIndex({}) {
   return (
-    <div className="flex70 responsive_flex_r2c">
+    <div className="rem35 responsive_flex_r2c">
       <Map />
       <List />
     </div>

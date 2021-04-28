@@ -6,18 +6,15 @@
 body {
   margin: 0;
   padding: 0;
+  font-size: 1rem;
   font-weight: 300;
   font-family: -apple-system;
   /* -webkit-font-smoothing: antialiased; */
   /* -moz-osx-font-smoothing: grayscale; */
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  height: 110vh;
-  /* min-height: 500px; */
-}
+/* #root {
+} */
 
 a {
   color: black;
@@ -33,17 +30,17 @@ a:hover {
   color: black;
 }
 
-/* ! vh, vw ============================== */
-.vh10 {
-  height: 4rem;
+/* ! rem ================================= */
+.rem5 {
+  height: 5rem;
 }
 
-.vh15 {
-  height: 15vh;
+.rem7 {
+  height: 7rem;
 }
 
-.vh70 {
-  height: 70vh;
+.rem35 {
+  height: 35rem;
 }
 /* ! ===================================== */
 
@@ -64,14 +61,6 @@ a:hover {
 .responsive_flex_c2r {
   display: flex;
   flex-direction: column;
-}
-
-.flex10 {
-  flex: 10 1 0%;
-}
-
-.flex15 {
-  flex: 15 1 0%;
 }
 
 .flex30 {
@@ -100,6 +89,18 @@ a:hover {
   text-align: center;
 } */
 
+.menu_closed {
+  display: none;
+}
+
+.menu_open {
+  position: absolute;
+  z-index: 1;
+  height: 40rem;
+  width: 100%;
+  background-color: white;
+}
+
 .sticky_nav {
   position: -webkit-sticky; /* Safari */
   position: sticky;
@@ -108,30 +109,42 @@ a:hover {
   border-bottom: solid 1px rgb(212, 212, 212);
 }
 
-.absolute_right1_nav {
+.absolute_nav_r {
   margin: 1.5rem;
   right: 0;
   position: absolute;
 }
 
-.absolute_right2_nav {
+.absolute_nav_r1_res {
+  margin: 1.5rem;
+  right: 0;
+  position: absolute;
+}
+
+.absolute_nav_r2_res {
   display: none;
 }
 
-.absolute_left_nav {
+.absolute_nav_l {
+  margin: 1.5rem;
+  left: 0;
+  position: absolute;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.absolute_nav_l_res {
   display: none;
 }
 
-.menu_closed {
-  display: none;
-}
-
-.menu_open {
+.inline_block_l {
+  margin: 1.5rem 1.5rem 1.5rem 2.5rem;
   display: inline-block;
 }
 
 .footer {
-  border-top: solid 1px rgb(212, 212, 212);
+  /* border-top: solid 1px rgb(212, 212, 212); */
+  background-color: #eee;
 }
 
 @media (max-width: 500px) {
@@ -144,18 +157,18 @@ a:hover {
     display: flex;
   }
 
-  .absolute_right1_nav {
+  .absolute_nav_r1_res {
     display: none;
   }
 
-  .absolute_right2_nav {
+  .absolute_nav_r2_res {
     display: inline-block;
     margin: 1.5rem;
     right: 0;
     position: absolute;
   }
 
-  .absolute_left_nav {
+  .absolute_nav_l_res {
     display: inline-block;
     margin: 1.5rem;
     left: 0;
