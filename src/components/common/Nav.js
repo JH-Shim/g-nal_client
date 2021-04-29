@@ -11,7 +11,7 @@ function Nav({ setIsMenu }) {
         ☰
       </span>
       <span>
-        <Link to="/">로고</Link>
+        <Link to="/">그날의 공기</Link>
       </span>
       <span className="absolute_nav_r1_res">
         <Link to="/">지도</Link>
