@@ -4,7 +4,16 @@ import React from 'react';
 function SignIn({}) {
   // const history = useHistory();
 
-  return <div className="rem35">로그인</div>;
+  return (
+    <div className="rem35 container_grid center_grid bg_contrast">
+      <div className="center_div_res container_grid center_grid">
+        <div className="signup_div"></div>
+        <div className="signup_div"></div>
+        <div className="signup_div"></div>
+        <div className="signup_div"></div>
+      </div>
+    </div>
+  );
 }
 
 export default SignIn;

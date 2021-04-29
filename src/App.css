@@ -16,6 +16,24 @@ body {
 /* #root {
 } */
 
+.signup_div {
+  border: 1px solid rgb(212, 212, 212);
+  height: 40%;
+  width: 70%;
+}
+
+.bg_contrast {
+  background-color: rgb(212, 212, 212);
+}
+
+.center_div_res {
+  padding: 5rem 0 5rem 0;
+  height: 75%;
+  width: 25%;
+  background-color: white;
+  border-radius: 3rem;
+}
+
 #react-naver-map {
   outline: none;
 }
@@ -191,6 +209,14 @@ a:hover {
   #logo_res {
     font-size: 1.2rem;
     font-style: italic;
+  }
+
+  .center_div_res {
+    padding: 5rem 0 5rem 0;
+    height: 80%;
+    width: 70%;
+    background-color: white;
+    border-radius: 3rem;
   }
 }
 
