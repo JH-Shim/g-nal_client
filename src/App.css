@@ -105,6 +105,11 @@ a:hover {
   background-color: white;
 }
 
+#logo_res {
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
 .sticky_nav {
   position: -webkit-sticky; /* Safari */
   position: sticky;
@@ -115,7 +120,7 @@ a:hover {
 }
 
 .absolute_nav_r {
-  margin: 1.5rem;
+  padding: 1.5rem;
   right: 0;
   position: absolute;
 }
@@ -131,7 +136,7 @@ a:hover {
 }
 
 .absolute_nav_l {
-  margin: 1.5rem;
+  padding: 1.5rem;
   left: 0;
   position: absolute;
   font-size: 1.5rem;
@@ -150,6 +155,7 @@ a:hover {
 .footer {
   /* border-top: solid 1px rgb(212, 212, 212); */
   background-color: #eee;
+  color: gray;
 }
 
 @media (max-width: 500px) {
@@ -168,18 +174,23 @@ a:hover {
 
   .absolute_nav_r2_res {
     display: inline-block;
-    margin: 1.5rem;
+    padding: 1.5rem;
     right: 0;
     position: absolute;
   }
 
   .absolute_nav_l_res {
     display: inline-block;
-    margin: 1.5rem;
+    padding: 1.5rem;
     left: 0;
     position: absolute;
     font-size: 1.5rem;
     cursor: pointer;
+  }
+
+  #logo_res {
+    font-size: 1.2rem;
+    font-style: italic;
   }
 }
 

@@ -5,7 +5,11 @@ import React from 'react';
 function Footer({}) {
   // const history = useHistory();
 
-  return <div className="rem7 footer">Footer</div>;
+  return (
+    <div className="rem7 footer container_grid center_grid">
+      sayhello.shim@gmail.com
+    </div>
+  );
 }
 
 export default Footer;
