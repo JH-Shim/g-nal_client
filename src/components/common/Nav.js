@@ -3,14 +3,14 @@ import { Link, useHistory } from 'react-router-dom';
 // import axios from 'axios';
 
 function Nav({ setIsMenu }) {
-  // const history = useHistory();
+  const history = useHistory();
 
   return (
-    <div className="rem5 container_grid center_grid sticky_nav">
+    <div className="rem5 sticky_nav container_grid center_grid">
       <span className="absolute_nav_l_res" onClick={() => setIsMenu(true)}>
         ☰
       </span>
-      <span>
+      <span id="logo_res">
         <Link to="/">그날의 공기</Link>
       </span>
       <span className="absolute_nav_r1_res">
@@ -18,8 +18,11 @@ function Nav({ setIsMenu }) {
         <Link to="/mypage">마이페이지</Link>
         <Link to="/signin">로그인</Link>
       </span>
-      <span className="absolute_nav_r2_res">
-        <Link to="/signin">로그인</Link>
+      <span
+        className="absolute_nav_r2_res"
+        onClick={() => history.push('/signin')}
+      >
+        로그인
       </span>
     </div>
   );
