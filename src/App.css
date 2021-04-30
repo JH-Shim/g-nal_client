@@ -1,3 +1,15 @@
+/* ! 작업 중 =================================== */
+#react-naver-map {
+  outline: none;
+}
+
+.signup_div {
+  border: 1px solid rgb(212, 212, 212);
+  height: 40%;
+  width: 70%;
+}
+/* ! ========================================= */
+
 * {
   box-sizing: border-box;
   /* border: 1px solid red; */
@@ -16,16 +28,6 @@ body {
 /* #root {
 } */
 
-.signup_div {
-  border: 1px solid rgb(212, 212, 212);
-  height: 40%;
-  width: 70%;
-}
-
-.bg_contrast {
-  background-color: rgb(212, 212, 212);
-}
-
 .center_div_res {
   padding: 5rem 0 5rem 0;
   height: 75%;
@@ -34,8 +36,25 @@ body {
   border-radius: 3rem;
 }
 
-#react-naver-map {
-  outline: none;
+.center_div_res_container {
+  height: 75%;
+  width: 25%;
+}
+
+.bg_contrast {
+  background-color: rgb(212, 212, 212);
+}
+
+.signin_up {
+  border-radius: 3rem 3rem 0 0;
+  margin-bottom: 1rem;
+  background-color: white;
+}
+
+.signin_down {
+  border-radius: 0 0 3rem 3rem;
+  background-color: #eee;
+  cursor: pointer;
 }
 
 a {
@@ -85,12 +104,20 @@ a:hover {
   flex-direction: column;
 }
 
+.flex20 {
+  flex: 20 1 0%;
+}
+
 .flex30 {
   flex: 30 1 0%;
 }
 
 .flex70 {
   flex: 70 1 0%;
+}
+
+.flex80 {
+  flex: 80 1 0%;
 }
 /* ! ===================================== */
 
@@ -217,6 +244,11 @@ a:hover {
     width: 70%;
     background-color: white;
     border-radius: 3rem;
+  }
+
+  .center_div_res_container {
+    height: 80%;
+    width: 70%;
   }
 }
 

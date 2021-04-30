@@ -22,7 +22,7 @@ function Menu({ isMenu, setIsMenu }) {
         <div
           onClick={() => {
             setIsMenu(false);
-            history.push('/signin');
+            history.push('/accounts/signin');
           }}
         >
           <span className="inline_block_l">로그인</span>

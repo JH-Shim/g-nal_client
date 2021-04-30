@@ -16,11 +16,11 @@ function Nav({ setIsMenu }) {
       <span className="absolute_nav_r1_res">
         <Link to="/">지도</Link>
         <Link to="/mypage">마이페이지</Link>
-        <Link to="/signin">로그인</Link>
+        <Link to="/accounts/signin">로그인</Link>
       </span>
       <span
         className="absolute_nav_r2_res"
-        onClick={() => history.push('/signin')}
+        onClick={() => history.push('/accounts/signin')}
       >
         로그인
       </span>

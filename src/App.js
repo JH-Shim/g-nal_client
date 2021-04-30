@@ -7,7 +7,7 @@ import Menu from './components/common/Menu';
 import Nav from './components/common/Nav';
 import Footer from './components/common/Footer';
 import PageIndex from './pages/PageIndex';
-import PageSignIn from './pages/PageSignIn';
+import PageAccounts from './pages/PageAccounts';
 import PageMyPage from './pages/PageMyPage';
 import PageEasterEgg from './pages/PageEasterEgg';
 import { fakeData } from './fakeData/fakeData';
@@ -30,8 +30,8 @@ function App() {
         <Route exact={true} path="/">
           <PageIndex />
         </Route>
-        <Route path="/signin">
-          <PageSignIn />
+        <Route path="/accounts">
+          <PageAccounts />
         </Route>
         <Route path="/mypage">
           <PageMyPage />
