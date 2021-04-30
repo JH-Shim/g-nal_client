@@ -1,7 +1,7 @@
 import React from 'react';
 // import { useHistory } from 'react-router-dom';
 
-function SignIn({}) {
+function SignUp({}) {
   // const history = useHistory();
 
   return (
@@ -10,10 +10,9 @@ function SignIn({}) {
         <div className="signup_div"></div>
         <div className="signup_div"></div>
         <div className="signup_div"></div>
-        <div className="signup_div"></div>
       </div>
     </div>
   );
 }
 
-export default SignIn;
+export default SignUp;
