@@ -203,6 +203,10 @@ a:hover {
   color: gray;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 @media (max-width: 500px) {
   .responsive_flex_r2c {
     display: flex;

@@ -7,7 +7,16 @@ function Footer({}) {
 
   return (
     <div className="rem7 footer container_grid center_grid">
-      sayhello.shim@gmail.com
+      <div
+        className="pointer"
+        onClick={() => {
+          if (confirm('sayhello.shim@gmail.com 으로 메일을 보내시겠습니까?')) {
+            window.location.href = 'mailto:sayhello.shim@gmail.com';
+          }
+        }}
+      >
+        sayhello.shim@gmail.com
+      </div>
     </div>
   );
 }
