@@ -1,20 +1,30 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router, // ! check shovel
+  Switch,
+  Route,
+  useRouteMatch,
+} from 'react-router-dom';
 import SignIn from '../components/accounts/SignIn';
-import SingUp from '../components/accounts/SignUp';
+import SignUp from '../components/accounts/SignUp';
 
 function PageSignIn({}) {
+  // const match = useRouteMatch();
+  const { path, url } = useRouteMatch();
+  // ! Nesting Examples : https://reactrouter.com/web/example/nesting
+
   return (
-    <Router>
-      <Switch>
-        <Route path="/accounts/signin">
-          <SignIn />
-        </Route>
-        <Route path="/accounts/signup">
-          <SingUp />
-        </Route>
-      </Switch>
-    </Router>
+    <Switch>
+      {/* <pre>{JSON.stringify(path, null, 2)}</pre> */}
+      {/* <pre>{JSON.stringify(match, null, 2)}</pre> */}
+      {/* <Route path={`${match.path}/signin`}> */}
+      <Route path={`${path}/signin`}>
+        <SignIn />
+      </Route>
+      <Route path={`${path}/signup`}>
+        <SignUp />
+      </Route>
+    </Switch>
   );
 }
 
