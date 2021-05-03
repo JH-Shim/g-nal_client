@@ -56,10 +56,12 @@ body {
 }
 
 .signup_password {
+  display: block;
   position: absolute;
   top: 0.2rem;
   right: 2.2rem;
   font-size: 0.7rem;
+  cursor: pointer;
 }
 
 a {
