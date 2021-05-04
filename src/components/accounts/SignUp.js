@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // import { useHistory } from 'react-router-dom';
 import { withRouter } from 'react-router'; // ! check withRouter
 import axios from 'axios';
+import { reverseBoolean, handleInputValue } from '../../modules/common';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -13,16 +14,7 @@ class SignUp extends React.Component {
       errorMessage: '',
       isPasswordShow: false,
     };
-    // this.handleInputValue = this.handleInputValue.bind(this);
   }
-
-  reverseIsPasswordShow = () => {
-    this.setState({ isPasswordShow: !this.state.isPasswordShow });
-  };
-
-  handleInputValue = (state) => (e) => {
-    this.setState({ [state]: e.target.value });
-  };
 
   handleSignup = () => {
     const { userId, nickname, password } = this.state;
@@ -46,14 +38,14 @@ class SignUp extends React.Component {
             <input
               className="hw100"
               placeholder="아이디"
-              onChange={this.handleInputValue('userId')}
+              onChange={handleInputValue.call(this, 'userId')}
             ></input>
           </div>
           <div className="flex10 container_padding">
             <input
               className="hw100"
               placeholder="닉네임"
-              onChange={this.handleInputValue('nickname')}
+              onChange={handleInputValue.call(this, 'nickname')}
             ></input>
           </div>
           <div className="flex10 container_padding relative">
@@ -61,7 +53,7 @@ class SignUp extends React.Component {
               className="hw100"
               placeholder="비밀번호"
               type={this.state.isPasswordShow ? 'text' : 'password'}
-              onChange={this.handleInputValue('password')}
+              onChange={handleInputValue.call(this, 'password')}
             ></input>
             <span
               className={
@@ -69,7 +61,7 @@ class SignUp extends React.Component {
                   ? 'signup_password display_none'
                   : 'signup_password'
               }
-              onClick={this.reverseIsPasswordShow}
+              onClick={reverseBoolean.bind(this, 'isPasswordShow')}
             >
               비밀번호 표시
             </span>
@@ -79,7 +71,7 @@ class SignUp extends React.Component {
                   ? 'signup_password'
                   : 'signup_password display_none'
               }
-              onClick={this.reverseIsPasswordShow}
+              onClick={reverseBoolean.bind(this, 'isPasswordShow')}
             >
               숨기기
             </span>
