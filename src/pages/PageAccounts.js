@@ -8,7 +8,7 @@ import {
 import SignIn from '../components/accounts/SignIn';
 import SignUp from '../components/accounts/SignUp';
 
-function PageSignIn({}) {
+function PageAccounts({}) {
   // const match = useRouteMatch();
   const { path, url } = useRouteMatch();
   // ! Nesting Examples : https://reactrouter.com/web/example/nesting
@@ -28,4 +28,4 @@ function PageSignIn({}) {
   );
 }
 
-export default PageSignIn;
+export default PageAccounts;

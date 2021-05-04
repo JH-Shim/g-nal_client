@@ -13,7 +13,7 @@ class SignIn extends React.Component {
   }
 
   handleInputValue = (state) => (e) => {
-    this.setState({ [state]: e.target.value });
+    this.setState({ [state]: e.target.value }); // ! check VS SignUp(modules)
   };
 
   handleSignup = () => {
