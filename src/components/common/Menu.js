@@ -45,7 +45,9 @@ function Menu({ isLogin, setIsLogin, isMenu, setIsMenu }) {
         <div
           onClick={() => {
             setIsMenu(false);
-            history.push('/mypage');
+            isLogin
+              ? history.push('/mypage')
+              : history.push('/accounts/signin');
           }}
         >
           <span className="inline_block_l">마이페이지</span>

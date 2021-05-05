@@ -15,7 +15,7 @@ function Nav({ isLogin, setIsLogin, setIsMenu }) {
       </span>
       <span className="absolute_nav_r1_res">
         <Link to="/">지도</Link>
-        <Link to="/mypage">마이페이지</Link>
+        <Link to={isLogin ? '/mypage' : '/accounts/signin'}>마이페이지</Link>
         {isLogin ? (
           <Link
             to="/"
