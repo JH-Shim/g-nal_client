@@ -25,15 +25,15 @@ class SignIn extends React.Component {
       return;
     }
 
+    // ! check axios server
     axios
-      // .post(`${process.env.REACT_APP_SERVER_DOMAIN}/accounts/signin`, {
-      .post(
-        `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/accounts/signin`,
-        {
-          userId: userId,
-          password: password,
-        },
-      )
+      .post(`${process.env.REACT_APP_SERVER_DOMAIN}/accounts/signin`, {
+        // .post(
+        //   `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/accounts/signin`,
+        //   {
+        userId: userId,
+        password: password,
+      })
       .then((res) => {
         if (res.data.message !== 'sign in succeeded') {
           alert(res.data.message);

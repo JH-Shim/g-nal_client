@@ -22,6 +22,7 @@ function Nav({ isLogin, setIsLogin, setIsMenu }) {
             onClick={() => {
               sessionStorage.clear();
               setIsLogin(false);
+              alert('로그아웃 되었습니다.');
             }}
           >
             로그아웃
@@ -37,6 +38,7 @@ function Nav({ isLogin, setIsLogin, setIsMenu }) {
             sessionStorage.clear();
             setIsLogin(false);
             history.push('/');
+            alert('로그아웃 되었습니다.');
           }}
         >
           로그아웃

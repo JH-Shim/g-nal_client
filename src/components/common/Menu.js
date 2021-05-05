@@ -26,6 +26,7 @@ function Menu({ isLogin, setIsLogin, isMenu, setIsMenu }) {
               setIsLogin(false);
               setIsMenu(false);
               history.push('/');
+              alert('로그아웃 되었습니다.');
             }}
           >
             <span className="inline_block_l">로그아웃</span>

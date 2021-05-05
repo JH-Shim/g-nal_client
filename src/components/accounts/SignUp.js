@@ -29,16 +29,16 @@ class SignUp extends React.Component {
       return;
     }
 
+    // ! check axios server
     axios
-      // .post(`${process.env.REACT_APP_SERVER_DOMAIN}/accounts/signup`, {
-      .post(
-        `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/accounts/signup`,
-        {
-          userId: userId,
-          nickname: nickname,
-          password: password,
-        },
-      )
+      .post(`${process.env.REACT_APP_SERVER_DOMAIN}/accounts/signup`, {
+        // .post(
+        //   `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/accounts/signup`,
+        //   {
+        userId: userId,
+        nickname: nickname,
+        password: password,
+      })
       .then((res) => {
         console.log(res);
         console.log(res.data.message);
@@ -46,6 +46,7 @@ class SignUp extends React.Component {
           alert(res.data.message);
         } else {
           this.props.history.push('/accounts/signin'); // ! check
+          alert('가입 완료. 로그인을 해주세요.');
         }
       })
       .catch((err) => console.log(err));
