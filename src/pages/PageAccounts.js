@@ -8,7 +8,7 @@ import {
 import SignIn from '../components/accounts/SignIn';
 import SignUp from '../components/accounts/SignUp';
 
-function PageAccounts({}) {
+function PageAccounts({ setIsLogin }) {
   // const match = useRouteMatch();
   const { path, url } = useRouteMatch();
   // ! Nesting Examples : https://reactrouter.com/web/example/nesting
@@ -19,7 +19,7 @@ function PageAccounts({}) {
       {/* <pre>{JSON.stringify(match, null, 2)}</pre> */}
       {/* <Route path={`${match.path}/signin`}> */}
       <Route path={`${path}/signin`}>
-        <SignIn />
+        <SignIn setIsLogin={setIsLogin} />
       </Route>
       <Route path={`${path}/signup`}>
         <SignUp />

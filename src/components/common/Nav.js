@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 // import axios from 'axios';
 
-function Nav({ setIsMenu }) {
+function Nav({ isLogin, setIsLogin, setIsMenu }) {
   const history = useHistory();
 
   return (
@@ -16,14 +16,39 @@ function Nav({ setIsMenu }) {
       <span className="absolute_nav_r1_res">
         <Link to="/">지도</Link>
         <Link to="/mypage">마이페이지</Link>
-        <Link to="/accounts/signin">로그인</Link>
+        {isLogin ? (
+          <Link
+            to="/"
+            onClick={() => {
+              sessionStorage.clear();
+              setIsLogin(false);
+            }}
+          >
+            로그아웃
+          </Link>
+        ) : (
+          <Link to="/accounts/signin">로그인</Link>
+        )}
       </span>
-      <span
-        className="absolute_nav_r2_res"
-        onClick={() => history.push('/accounts/signin')}
-      >
-        로그인
-      </span>
+      {isLogin ? (
+        <span
+          className="absolute_nav_r2_res"
+          onClick={() => {
+            sessionStorage.clear();
+            setIsLogin(false);
+            history.push('/');
+          }}
+        >
+          로그아웃
+        </span>
+      ) : (
+        <span
+          className="absolute_nav_r2_res"
+          onClick={() => history.push('/accounts/signin')}
+        >
+          로그인
+        </span>
+      )}
     </div>
   );
 }

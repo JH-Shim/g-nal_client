@@ -15,23 +15,36 @@ import { fakeData } from './fakeData/fakeData';
 axios.defaults.withCredentials = true;
 
 function App() {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isPractice, setIsPractice] = useState(true); // ! check
+  const [isLogin, setIsLogin] = useState(false);
   const [isMenu, setIsMenu] = useState(false);
 
   const resetState = () => {
-    setIsLogin(false);
+    setIsLogin(false); // ! check
   };
 
-  return isLogin ? (
+  useEffect(() => {
+    if (sessionStorage.accessToken) {
+      setIsLogin(!isLogin);
+      // alert(''); // ! check
+    }
+  }, []);
+
+  return isPractice ? (
     <Router>
-      <Menu isMenu={isMenu} setIsMenu={setIsMenu} />
-      <Nav setIsMenu={setIsMenu} />
+      <Menu
+        isLogin={isLogin}
+        setIsLogin={setIsLogin}
+        isMenu={isMenu}
+        setIsMenu={setIsMenu}
+      />
+      <Nav isLogin={isLogin} setIsLogin={setIsLogin} setIsMenu={setIsMenu} />
       <Switch>
         <Route exact={true} path="/">
           <PageIndex />
         </Route>
         <Route path="/accounts">
-          <PageAccounts />
+          <PageAccounts setIsLogin={setIsLogin} />
         </Route>
         <Route path="/mypage">
           <PageMyPage />
@@ -46,7 +59,7 @@ function App() {
       <Footer />
     </Router>
   ) : (
-    <div>isLogin false</div>
+    <div>isPractice false</div>
   );
 }
 

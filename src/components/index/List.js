@@ -4,12 +4,7 @@ import React from 'react';
 function List({}) {
   // const history = useHistory();
 
-  return (
-    <div className="flex30 container_grid center_grid">
-      {/* List */}
-      <div className="logoPRAC container_grid center_grid">그날의 공기</div>
-    </div>
-  );
+  return <div className="flex30">List</div>;
 }
 
 export default List;

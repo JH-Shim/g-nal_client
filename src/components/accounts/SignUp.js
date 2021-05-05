@@ -42,7 +42,7 @@ class SignUp extends React.Component {
       .then((res) => {
         console.log(res);
         console.log(res.data.message);
-        if (res.data.message !== 'signup succeeded') {
+        if (res.data.message !== 'sign up succeeded') {
           alert(res.data.message);
         } else {
           this.props.history.push('/accounts/signin'); // ! check
