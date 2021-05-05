@@ -26,12 +26,22 @@ class SignIn extends React.Component {
     }
 
     axios
-      .post(`${process.env.REACT_APP_SERVER_DOMAIN}/accounts/signin`, {
-        userId: userId,
-        password: password,
-      })
+      // .post(`${process.env.REACT_APP_SERVER_DOMAIN}/accounts/signin`, {
+      .post(
+        `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/accounts/signin`,
+        {
+          userId: userId,
+          password: password,
+        },
+      )
       .then((res) => {
-        this.props.history.push('/');
+        if (res.data.message !== 'sign in succeeded') {
+          alert(res.data.message);
+        } else {
+          sessionStorage.setItem('accessToken', res.data.accessToken);
+          this.props.setIsLogin(true);
+          this.props.history.push('/');
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -62,6 +72,7 @@ class SignIn extends React.Component {
             <div className="flex10 container_padding">
               <div
                 className="hw100 bg_eee container_grid center_grid pointer"
+                onClick={this.handleSignIn}
                 tabIndex="0"
                 onKeyDown={handleKeyDown('Enter', this.handleSignIn)}
               >

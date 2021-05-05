@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 // import axios from 'axios';
 
-function Menu({ isMenu, setIsMenu }) {
+function Menu({ isLogin, setIsLogin, isMenu, setIsMenu }) {
   const history = useHistory();
 
   return (
@@ -19,14 +19,28 @@ function Menu({ isMenu, setIsMenu }) {
         </span>
       </div>
       <div className="rem35">
-        <div
-          onClick={() => {
-            setIsMenu(false);
-            history.push('/accounts/signin');
-          }}
-        >
-          <span className="inline_block_l">로그인</span>
-        </div>
+        {isLogin ? (
+          <div
+            onClick={() => {
+              sessionStorage.clear();
+              setIsLogin(false);
+              setIsMenu(false);
+              history.push('/');
+            }}
+          >
+            <span className="inline_block_l">로그아웃</span>
+          </div>
+        ) : (
+          <div
+            onClick={() => {
+              setIsMenu(false);
+              history.push('/accounts/signin');
+            }}
+          >
+            <span className="inline_block_l">로그인</span>
+          </div>
+        )}
+
         <div
           onClick={() => {
             setIsMenu(false);
