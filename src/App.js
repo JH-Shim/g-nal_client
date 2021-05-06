@@ -25,9 +25,10 @@ function App() {
 
   useEffect(() => {
     if (sessionStorage.accessToken) {
-      setIsLogin(!isLogin);
+      setIsLogin(true);
       // alert(''); // ! check
     }
+    // alert(''); // ! check
   }, []);
 
   return isPractice ? (
