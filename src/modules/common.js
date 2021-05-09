@@ -12,6 +12,12 @@ const handleInputValue = function (state) {
   };
 };
 
+// ! 사용 예시 onChange={handleFileUpload.bind(this)}
+const handleFileUpload = function (e) {
+  this.setState({ file: e.target.files[0] });
+  // console.log(this.state.file); // ! check setState도 비동기
+};
+
 // ! 사용 예시 onChange={handleInputValueSHA256.call(this, 'password')}
 const handleInputValueSHA256 = function (state) {
   return (e) => {
@@ -34,6 +40,7 @@ const handleKeyDown = function (key, func) {
 export {
   reverseBoolean,
   handleInputValue,
+  handleFileUpload,
   handleInputValueSHA256,
   handleKeyDown,
 };
