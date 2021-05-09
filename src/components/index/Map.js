@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps';
 import Geolocation from './Geolocation';
 
-function Map({}) {
-  const [geolocation, setGeolocation] = useState({ lat: 0, lng: 0 });
+function Map({ geolocation, setGeolocation }) {
   const [places, setPlaces] = useState(null);
 
   // const history = useHistory();

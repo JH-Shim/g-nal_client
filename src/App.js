@@ -12,7 +12,7 @@ import PageMyPage from './pages/PageMyPage';
 import PageEasterEgg from './pages/PageEasterEgg';
 import { fakeData } from './fakeData/fakeData';
 
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true; // ! check 위치
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
