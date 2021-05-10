@@ -6,7 +6,7 @@ function PageIndex({}) {
   const [geolocation, setGeolocation] = useState({ lat: 0, lng: 0 });
 
   return (
-    <div className="rem35 responsive_flex_r2c">
+    <div id="responsive_flex_r2c_container">
       <Map geolocation={geolocation} setGeolocation={setGeolocation} />
       <List geolocation={geolocation} />
     </div>

@@ -9,7 +9,7 @@ function Map({ geolocation, setGeolocation }) {
   // const history = useHistory();
 
   return (
-    <div className="flex70">
+    <div id="responsive_flex_r2c_map">
       <RenderAfterNavermapsLoaded
         ncpClientId={process.env.REACT_APP_NAVER_MAP_NCPCLIENTID}
         error={<p>Maps Load Error</p>}

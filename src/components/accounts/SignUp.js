@@ -40,8 +40,6 @@ class SignUp extends React.Component {
         password: password,
       })
       .then((res) => {
-        console.log(res);
-        console.log(res.data.message);
         if (res.data.message !== 'sign up succeeded') {
           alert(res.data.message);
         } else {
