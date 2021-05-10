@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { handleInputValue, handleFileUpload } from '../../modules/common';
 
@@ -45,20 +44,57 @@ class List extends React.Component {
         { headers: { authorization: sessionStorage.getItem('accessToken') } },
       )
       .then((res) => {
-        console.log(res);
+        if (res.data.message === 'place uploaded') {
+          alert('그날의 공기를 기록하였습니다.');
+        } else {
+          alert('기록되지 않았습니다.');
+        }
       })
       .catch((err) => console.log(err));
   };
 
   render() {
     return (
-      <div className="flex30">
-        <input type="file" onChange={handleFileUpload.bind(this)} />
-        <input onChange={handleInputValue.call(this, 'placeName')}></input>
+      <div
+        id="responsive_flex_r2c_list"
+        className="container_flex_column container_padding_1rem"
+      >
+        <div
+          id="imageDiv_container"
+          onClick={() => {
+            let imageInput = document.querySelector('#imageInput');
+            imageInput.click();
+          }}
+        >
+          {this.state.file ? (
+            <img id="imageDiv" src={this.state.file} />
+          ) : (
+            <div id="imageDiv">클릭하여 사진등록</div>
+          )}
+        </div>
         <input
+          className="display_none"
+          id="imageInput"
+          type="file"
+          accept="image/*"
+          onChange={handleFileUpload.bind(this)}
+        />
+        <textarea
+          className="flex10"
+          placeholder="장소 이름"
+          onChange={handleInputValue.call(this, 'placeName')}
+        />
+        <textarea
+          className="flex20"
+          placeholder="장소 설명"
           onChange={handleInputValue.call(this, 'placeDescription')}
-        ></input>
-        <div onClick={this.handlePlaceSubmit}>submit</div>
+        />
+        <div
+          className="flex20 container_grid center_grid bg_212"
+          onClick={this.handlePlaceSubmit}
+        >
+          기록
+        </div>
       </div>
     );
   }
@@ -66,8 +102,9 @@ class List extends React.Component {
 
 export default List;
 
+// ! sample code
 // return (
-//   <div className="flex30">
+//   <div>
 //     {!places ? (
 //       <div>List</div>
 //     ) : (
