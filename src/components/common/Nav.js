@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-// import axios from 'axios';
 
 function Nav({ isLogin, setIsLogin, setIsMenu }) {
   const history = useHistory();

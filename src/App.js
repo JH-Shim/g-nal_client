@@ -41,16 +41,6 @@ function App() {
       />
       <Nav isLogin={isLogin} setIsLogin={setIsLogin} setIsMenu={setIsMenu} />
       <Switch>
-        {/* <Route
-          exact={true}
-          path="/"
-          render={() => {
-            if (isLogin) {
-              return <PageIndex />;
-            }
-            return <Redirect to="/accounts/signin" />;
-          }}
-        /> */}
         <Route exact={true} path="/">
           {isLogin ? <PageIndex /> : <Redirect to="/accounts/signin" />}
         </Route>
@@ -63,9 +53,6 @@ function App() {
         <Route path="/easteregg">
           <PageEasterEgg />
         </Route>
-        {/* <Route path="/">
-            <PageMain />
-          </Route> */}
       </Switch>
       <Footer />
     </Router>
