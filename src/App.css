@@ -68,6 +68,10 @@ body {
   cursor: pointer;
 }
 
+img {
+  object-fit: contain;
+}
+
 a {
   color: black;
   margin: 0.7rem;
@@ -195,6 +199,7 @@ textarea:focus {
 #imageDiv_container {
   position: relative;
   width: 100%;
+  cursor: pointer;
 }
 
 #imageDiv_container::after {

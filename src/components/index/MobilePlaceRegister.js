@@ -120,7 +120,7 @@ class MobilePlaceRegister extends React.Component {
             onChange={handleInputValue.call(this, 'placeDescription')}
           />
           <div
-            className="flex20 container_grid center_grid bg_212"
+            className="flex20 container_grid center_grid bg_212 pointer"
             onClick={this.handlePlaceSubmit}
           >
             기록
