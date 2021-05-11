@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import { handleInputValue, handleFileUpload } from '../../modules/common';
+import {
+  handleInputValue,
+  handleFileUpload,
+  handleKeyDown,
+} from '../../modules/common';
 
 // axios.defaults.headers.common['authorization'] = sessionStorage.getItem(
 //   'accessToken', // ! check 위치
@@ -110,6 +114,8 @@ class PlaceRegister extends React.Component {
         <div
           className="flex20 container_grid center_grid bg_212 pointer"
           onClick={this.handlePlaceSubmit}
+          tabIndex="0"
+          onKeyDown={handleKeyDown('Enter', this.handlePlaceSubmit)}
         >
           기록
         </div>
