@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import Map from '../components/index/Map';
-import List from '../components/index/List';
+import PlaceRegister from '../components/index/PlaceRegister';
+import MobilePlaceRegister from '../components/index/MobilePlaceRegister';
 
 function PageIndex({}) {
   const [geolocation, setGeolocation] = useState({ lat: 0, lng: 0 });
+  const [isMobileRegister, setIsMobileRegister] = useState(false);
 
   return (
-    <div id="responsive_flex_r2c_container">
-      <Map geolocation={geolocation} setGeolocation={setGeolocation} />
-      <List geolocation={geolocation} />
+    <div id="PageIndex_container">
+      <MobilePlaceRegister
+        isMobileRegister={isMobileRegister}
+        setIsMobileRegister={setIsMobileRegister}
+      />
+      <Map
+        geolocation={geolocation}
+        setGeolocation={setGeolocation}
+        setIsMobileRegister={setIsMobileRegister}
+      />
+      <PlaceRegister geolocation={geolocation} />
     </div>
   );
 }

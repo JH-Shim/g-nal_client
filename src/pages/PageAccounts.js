@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   BrowserRouter as Router, // ! check shovel
   Switch,
@@ -8,7 +9,7 @@ import {
 import SignIn from '../components/accounts/SignIn';
 import SignUp from '../components/accounts/SignUp';
 
-function PageAccounts({ setIsLogin }) {
+function PageAccounts({ isLogin, setIsLogin }) {
   // const match = useRouteMatch();
   const { path, url } = useRouteMatch();
   // ! Nesting Examples : https://reactrouter.com/web/example/nesting
@@ -19,7 +20,7 @@ function PageAccounts({ setIsLogin }) {
       {/* <pre>{JSON.stringify(match, null, 2)}</pre> */}
       {/* <Route path={`${match.path}/signin`}> */}
       <Route path={`${path}/signin`}>
-        <SignIn setIsLogin={setIsLogin} />
+        <SignIn isLogin={isLogin} setIsLogin={setIsLogin} />
       </Route>
       <Route path={`${path}/signup`}>
         <SignUp />

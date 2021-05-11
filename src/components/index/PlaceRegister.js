@@ -6,15 +6,33 @@ import { handleInputValue, handleFileUpload } from '../../modules/common';
 //   'accessToken', // ! check 위치
 // );
 
-class List extends React.Component {
+class PlaceRegister extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       file: '',
+      imgBase64: '',
       placeName: '',
       placeDescription: '',
     };
   }
+
+  handleChangeFile = (e) => {
+    let reader = new FileReader();
+
+    reader.onloadend = () => {
+      // 2. 읽기가 완료되면 아래코드가 실행됩니다.
+      const base64 = reader.result;
+      if (base64) {
+        this.setState({ imgBase64: base64.toString() }); // 파일 base64 상태 업데이트
+      }
+    };
+
+    if (e.target.files[0]) {
+      reader.readAsDataURL(e.target.files[0]); // 1. 파일을 읽어 버퍼에 저장합니다.
+      this.setState({ file: e.target.files[0] }); // 파일 상태 업데이트
+    }
+  };
 
   handlePlaceSubmit = () => {
     const { file, placeName, placeDescription } = this.state;
@@ -56,7 +74,7 @@ class List extends React.Component {
   render() {
     return (
       <div
-        id="responsive_flex_r2c_list"
+        id="PlaceRegister_res"
         className="container_flex_column container_padding_1rem"
       >
         <div
@@ -66,8 +84,8 @@ class List extends React.Component {
             imageInput.click();
           }}
         >
-          {this.state.file ? (
-            <img id="imageDiv" src={this.state.file} />
+          {this.state.imgBase64 ? (
+            <img id="imageDiv" src={this.state.imgBase64} />
           ) : (
             <div id="imageDiv">클릭하여 사진등록</div>
           )}
@@ -77,7 +95,8 @@ class List extends React.Component {
           id="imageInput"
           type="file"
           accept="image/*"
-          onChange={handleFileUpload.bind(this)}
+          // onChange={handleFileUpload.bind(this)}
+          onChange={this.handleChangeFile}
         />
         <textarea
           className="flex10"
@@ -100,13 +119,13 @@ class List extends React.Component {
   }
 }
 
-export default List;
+export default PlaceRegister;
 
 // ! sample code
 // return (
 //   <div>
 //     {!places ? (
-//       <div>List</div>
+//       <div>PlaceRegister</div>
 //     ) : (
 //       <div>
 //         {places.map((place, idx) => (

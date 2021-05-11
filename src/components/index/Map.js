@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps';
 import Geolocation from './Geolocation';
 
-function Map({ geolocation, setGeolocation }) {
+function Map({ geolocation, setGeolocation, setIsMobileRegister }) {
   const [places, setPlaces] = useState(null);
 
   // const history = useHistory();
 
   return (
-    <div id="responsive_flex_r2c_map">
+    <div className="flex70">
       <RenderAfterNavermapsLoaded
         ncpClientId={process.env.REACT_APP_NAVER_MAP_NCPCLIENTID}
         error={<p>Maps Load Error</p>}
@@ -31,7 +31,13 @@ function Map({ geolocation, setGeolocation }) {
             setGeolocation({ lat: e.coord._lat, lng: e.coord._lng });
           }}
         >
-          <Marker position={geolocation} animation={1} onClick={() => {}} />
+          <Marker
+            position={geolocation}
+            animation={1}
+            onClick={() => {
+              setIsMobileRegister(true);
+            }}
+          />
           {!places ? (
             <div className="display_none"></div>
           ) : (
@@ -43,7 +49,7 @@ function Map({ geolocation, setGeolocation }) {
                     lat: place.lat,
                     lng: place.lng,
                   }}
-                  // onClick={() => {}} // ! check onClick. 위에 Marker onClick도 신경쓰길
+                  // onClick={() => {}} // ! check onClick.
                 />
               ))}
             </div>
