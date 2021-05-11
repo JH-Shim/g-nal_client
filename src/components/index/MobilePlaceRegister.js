@@ -64,6 +64,7 @@ class MobilePlaceRegister extends React.Component {
       .then((res) => {
         if (res.data.message === 'place uploaded') {
           alert('그날의 공기를 기록하였습니다.');
+          window.location.reload();
         } else {
           alert('기록되지 않았습니다.');
         }
