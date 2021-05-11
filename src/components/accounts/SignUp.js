@@ -12,7 +12,7 @@ class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: '',
+      account: '',
       nickname: '',
       password: '',
       errorMessage: '', // ! check
@@ -21,9 +21,9 @@ class SignUp extends React.Component {
   }
 
   handleSignUp = () => {
-    const { userId, nickname, password } = this.state;
+    const { account, nickname, password } = this.state;
 
-    if (!userId || !nickname || !password) {
+    if (!account || !nickname || !password) {
       alert('모든 항목을 채워주세요.'); //! check 유효성 검사 추가
       return;
     }
@@ -34,7 +34,7 @@ class SignUp extends React.Component {
         // .post(
         //   `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/accounts/signup`,
         //   {
-        userId: userId,
+        account: account,
         nickname: nickname,
         password: password,
       })
@@ -57,7 +57,7 @@ class SignUp extends React.Component {
             <input
               className="hw100"
               placeholder="아이디"
-              onChange={handleInputValue.call(this, 'userId')}
+              onChange={handleInputValue.call(this, 'account')}
               onKeyDown={handleKeyDown('Enter', this.handleSignUp)}
             ></input>
           </div>

@@ -5,7 +5,7 @@ const reverseBoolean = function (ele) {
   this.setState({ [ele]: !this.state[ele] });
 };
 
-// ! 사용 예시 onChange={handleInputValue.call(this, 'userId')}
+// ! 사용 예시 onChange={handleInputValue.call(this, 'account')}
 const handleInputValue = function (state) {
   return (e) => {
     this.setState({ [state]: e.target.value });

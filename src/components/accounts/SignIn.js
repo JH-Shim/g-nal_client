@@ -8,7 +8,7 @@ class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: '',
+      account: '',
       password: '',
     };
   }
@@ -18,9 +18,9 @@ class SignIn extends React.Component {
   };
 
   handleSignIn = () => {
-    const { userId, password } = this.state;
+    const { account, password } = this.state;
 
-    if (!userId || !password) {
+    if (!account || !password) {
       alert('모든 항목을 채워주세요.');
       return;
     }
@@ -31,7 +31,7 @@ class SignIn extends React.Component {
         // .post(
         //   `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/accounts/signin`,
         //   {
-        userId: userId,
+        account: account,
         password: password,
       })
       .then((res) => {
@@ -58,7 +58,7 @@ class SignIn extends React.Component {
               <input
                 className="hw100"
                 placeholder="아이디"
-                onChange={this.handleInputValue('userId')}
+                onChange={this.handleInputValue('account')}
                 onKeyDown={handleKeyDown('Enter', this.handleSignIn)}
               ></input>
             </div>
