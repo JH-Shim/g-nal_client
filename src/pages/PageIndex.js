@@ -10,6 +10,7 @@ function PageIndex({}) {
   return (
     <div id="PageIndex_container">
       <MobilePlaceRegister
+        geolocation={geolocation}
         isMobileRegister={isMobileRegister}
         setIsMobileRegister={setIsMobileRegister}
       />

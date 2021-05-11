@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { handleInputValue, handleFileUpload } from '../../modules/common';
+import {
+  handleInputValue,
+  handleFileUpload,
+  handleKeyDown,
+} from '../../modules/common';
 
 class MobilePlaceRegister extends React.Component {
   constructor(props) {
@@ -122,6 +126,8 @@ class MobilePlaceRegister extends React.Component {
           <div
             className="flex20 container_grid center_grid bg_212 pointer"
             onClick={this.handlePlaceSubmit}
+            tabIndex="0"
+            onKeyDown={handleKeyDown('Enter', this.handlePlaceSubmit)}
           >
             기록
           </div>
