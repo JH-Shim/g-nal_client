@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import axios from 'axios';
 
 import './App.css';
@@ -36,11 +41,21 @@ function App() {
       />
       <Nav isLogin={isLogin} setIsLogin={setIsLogin} setIsMenu={setIsMenu} />
       <Switch>
+        {/* <Route
+          exact={true}
+          path="/"
+          render={() => {
+            if (isLogin) {
+              return <PageIndex />;
+            }
+            return <Redirect to="/accounts/signin" />;
+          }}
+        /> */}
         <Route exact={true} path="/">
-          <PageIndex />
+          {isLogin ? <PageIndex /> : <Redirect to="/accounts/signin" />}
         </Route>
         <Route path="/accounts">
-          <PageAccounts setIsLogin={setIsLogin} />
+          <PageAccounts isLogin={isLogin} setIsLogin={setIsLogin} />
         </Route>
         <Route path="/mypage">
           <PageMyPage />
