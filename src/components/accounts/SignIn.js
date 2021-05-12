@@ -42,6 +42,7 @@ class SignIn extends React.Component {
           sessionStorage.setItem('account', account);
           this.props.history.push(`/@${account}`);
           this.props.setIsLogin(true); // ! check 바로 위의 코드 한 줄과 순서를 바꾸면 다음과 같은 error 발생 "Can't perform a React state update on an unmounted component."
+          // ! 위의 에러가 발생한 이유 : 지도가 있는 페이지에 랜딩 시 비동기 작업들이 이루어지고, 그 작업들이 끝나기 전에 다른 페이지로 이동을 시켰을 경우, 비동기 작업이 끝난 후 unmounted component에서 state update가 발생하기 때문. (덧붙이자면 `/@${account}` 와 '/' 의 <Map />이 서로 다르고, unmounted 된 '/'의 <Map />에서 state update가 일어나며 error가 뜬다. '/'의 페이지를 tutorial 페이지로 구성하려고 하는데, 그렇게 되면 코드가 간소화되는 부분이 많을 것이며, 아울러 위와 같은 error에서도 해방된다.)
         }
       })
       .catch((err) => console.log(err));
