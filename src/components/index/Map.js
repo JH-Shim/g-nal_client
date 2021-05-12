@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps';
 import Geolocation from './Geolocation';
 
-function Map({ geolocation, setGeolocation, setIsMobileRegister }) {
-  const [places, setPlaces] = useState(null);
+function Map({ geolocation, setGeolocation, setIsMobileRegister, places }) {
+  // const [places, setPlaces] = useState(null); // ! check
 
   // const history = useHistory();
 
@@ -39,7 +39,7 @@ function Map({ geolocation, setGeolocation, setIsMobileRegister }) {
             }}
           />
           {!places ? (
-            <div className="display_none"></div>
+            <div className="display_none"></div> // ! check
           ) : (
             <div>
               {places.map((place) => (
