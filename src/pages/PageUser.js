@@ -21,12 +21,14 @@ function PageUser({}) {
   }, []);
 
   const getPlaces = () => {
-    // ! check axios local
+    // ! check axios server
     axios
-      // .post(`${process.env.REACT_APP_SERVER_DOMAIN}/place`, {
       .post(
-        `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/place`,
+        `${process.env.REACT_APP_SERVER_DOMAIN}/place`,
         {
+          // .post(
+          //   `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/place`,
+          //   {
           urlAccount,
         },
         { headers: { authorization: sessionStorage.getItem('accessToken') } },
