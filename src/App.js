@@ -15,6 +15,7 @@ import PageIndex from './pages/PageIndex';
 import PageAccounts from './pages/PageAccounts';
 import PageMyPage from './pages/PageMyPage';
 import PageEasterEgg from './pages/PageEasterEgg';
+import PageUser from './pages/PageUser';
 import { fakeData } from './fakeData/fakeData';
 
 // axios.defaults.withCredentials = true; // ! check 위치
@@ -52,6 +53,9 @@ function App() {
         </Route>
         <Route path="/easteregg">
           <PageEasterEgg />
+        </Route>
+        <Route path="/:account">
+          <PageUser />
         </Route>
       </Switch>
       <Footer />

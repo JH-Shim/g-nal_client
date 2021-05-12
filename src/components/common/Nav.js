@@ -10,10 +10,26 @@ function Nav({ isLogin, setIsLogin, setIsMenu }) {
         ☰
       </span>
       <span id="logo_res">
-        <Link to="/">그날의 공기</Link>
+        <Link
+          to={
+            sessionStorage.getItem('account')
+              ? `/@${sessionStorage.getItem('account')}`
+              : '/'
+          }
+        >
+          그날의 공기
+        </Link>
       </span>
       <span className="absolute_nav_r1_res">
-        <Link to="/">지도</Link>
+        <Link
+          to={
+            sessionStorage.getItem('account')
+              ? `/@${sessionStorage.getItem('account')}`
+              : '/'
+          }
+        >
+          지도
+        </Link>
         <Link to={isLogin ? '/mypage' : '/accounts/signin'}>마이페이지</Link>
         {isLogin ? (
           <Link

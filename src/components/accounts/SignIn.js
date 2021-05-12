@@ -39,8 +39,9 @@ class SignIn extends React.Component {
           alert(res.data.message);
         } else {
           sessionStorage.setItem('accessToken', res.data.accessToken);
-          this.props.setIsLogin(true);
-          this.props.history.push('/');
+          sessionStorage.setItem('account', account);
+          this.props.history.push(`/@${account}`);
+          this.props.setIsLogin(true); // ! check 바로 위의 코드 한 줄과 순서를 바꾸면 다음과 같은 error 발생 "Can't perform a React state update on an unmounted component."
         }
       })
       .catch((err) => console.log(err));
@@ -48,7 +49,7 @@ class SignIn extends React.Component {
 
   render() {
     return this.props.isLogin ? (
-      <Redirect to="/" />
+      <Redirect to="/" /> // ! check 로그인 상태에서 새로고침 시, 다시 SignIn 페이지로 오는 문제에 대응하기 위한 코드. 여기서 알 수 있는 것은, 상태가 변화하여 re-rendering이 된다고 할지라도 Switch를 다시 돌지는 않는다는 것.
     ) : (
       <div className="rem35 container_grid center_grid bg_contrast">
         <div className="container_flex_column center_div_res_container">

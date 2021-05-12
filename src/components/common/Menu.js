@@ -55,7 +55,11 @@ function Menu({ isLogin, setIsLogin, isMenu, setIsMenu }) {
         <div
           onClick={() => {
             setIsMenu(false);
-            history.push('/');
+            if (sessionStorage.getItem('account')) {
+              history.push(`/@${sessionStorage.getItem('account')}`);
+            } else {
+              history.push('/');
+            }
           }}
         >
           <span className="inline_block_l">지도</span>
