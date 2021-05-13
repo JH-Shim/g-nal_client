@@ -76,7 +76,9 @@ class PlaceRegister extends React.Component {
   };
 
   render() {
-    return (
+    return !this.props.isRegister ? (
+      <div className="display_none"></div>
+    ) : (
       <div
         id="PlaceRegister_res"
         className="container_flex_column container_padding_1rem"
@@ -126,18 +128,3 @@ class PlaceRegister extends React.Component {
 }
 
 export default PlaceRegister;
-
-// ! sample code
-// return (
-//   <div>
-//     {!places ? (
-//       <div>PlaceRegister</div>
-//     ) : (
-//       <div>
-//         {places.map((place, idx) => (
-//           <PlaceElement key={idx} place={place} />
-//         ))}
-//       </div>
-//     )}
-//   </div>
-// );

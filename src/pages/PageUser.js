@@ -3,10 +3,12 @@ import { Redirect, useHistory, useRouteMatch } from 'react-router-dom';
 import Map from '../components/index/Map';
 import PlaceRegister from '../components/index/PlaceRegister';
 import MobilePlaceRegister from '../components/index/MobilePlaceRegister';
+import PlaceList from '../components/index/PlaceList';
 import axios from 'axios';
 
 function PageUser({}) {
   const [geolocation, setGeolocation] = useState({ lat: 0, lng: 0 });
+  const [isRegister, setIsRegister] = useState(false);
   const [isMobileRegister, setIsMobileRegister] = useState(false);
   const [places, setPlaces] = useState('waiting');
   const [isOwner, setIsOwner] = useState(false);
@@ -42,8 +44,8 @@ function PageUser({}) {
         } else if (res.data.message === '!owner') {
           setPlaces(res.data.placeInfo);
         } else {
-          setPlaces(res.data.placeInfo);
           setIsOwner(true);
+          setPlaces(res.data.placeInfo);
         }
       })
       .catch((err) => console.log(err));
@@ -52,21 +54,24 @@ function PageUser({}) {
   return match.params.account[0] !== '@' ? (
     <Redirect to="/" />
   ) : places === 'waiting' ? (
-    <div className="display_none"></div>
+    <div className="responsive_flex_r2c rem35"></div>
   ) : (
-    <div id="PageIndex_container">
+    <div className="responsive_flex_r2c rem35">
+      <Map
+        geolocation={geolocation}
+        setGeolocation={setGeolocation}
+        setIsRegister={setIsRegister}
+        setIsMobileRegister={setIsMobileRegister}
+        places={places}
+        isOwner={isOwner}
+      />
+      <PlaceRegister geolocation={geolocation} isRegister={isRegister} />
       <MobilePlaceRegister
         geolocation={geolocation}
         isMobileRegister={isMobileRegister}
         setIsMobileRegister={setIsMobileRegister}
       />
-      <Map
-        geolocation={geolocation}
-        setGeolocation={setGeolocation}
-        setIsMobileRegister={setIsMobileRegister}
-        places={places}
-      />
-      <PlaceRegister geolocation={geolocation} />
+      <PlaceList isRegister={isRegister} places={places} />
     </div>
   );
 }
