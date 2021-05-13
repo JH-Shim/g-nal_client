@@ -2,7 +2,14 @@ import React from 'react';
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps';
 import Geolocation from './Geolocation';
 
-function Map({ geolocation, setGeolocation, setIsMobileRegister, places }) {
+function Map({
+  geolocation,
+  setGeolocation,
+  setIsRegister,
+  setIsMobileRegister,
+  places,
+  isOwner,
+}) {
   return (
     <div className="flex70">
       <RenderAfterNavermapsLoaded
@@ -17,7 +24,7 @@ function Map({ geolocation, setGeolocation, setIsMobileRegister, places }) {
             width: '100%',
             height: '100%',
           }}
-          defaultZoom={15}
+          defaultZoom={12}
           center={geolocation}
           // defaultCenter={geolocation} // ! check center와의 차이
           onClick={(e) => {
@@ -30,7 +37,13 @@ function Map({ geolocation, setGeolocation, setIsMobileRegister, places }) {
             position={geolocation}
             animation={1}
             onClick={() => {
-              setIsMobileRegister(true);
+              if (isOwner) {
+                if (window.innerWidth > 500) {
+                  setIsRegister(true);
+                } else {
+                  setIsMobileRegister(true);
+                }
+              }
             }}
           />
           {!places ? (

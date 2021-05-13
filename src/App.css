@@ -2,6 +2,34 @@
 #react-naver-map {
   outline: none;
 }
+
+.PlaceListElement {
+  display: flex;
+  margin: 2rem;
+  height: 8rem;
+  border-bottom: solid 1px rgb(212, 212, 212);
+}
+
+.PLEimg {
+  object-fit: cover;
+  height: 95%;
+}
+
+.PLEdiv {
+  position: relative;
+  text-align: right;
+  flex: 10 1 0;
+}
+
+.scroll {
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
 /* ! ========================================= */
 
 * {
@@ -18,9 +46,6 @@ body {
   /* -webkit-font-smoothing: antialiased; */
   /* -moz-osx-font-smoothing: grayscale; */
 }
-
-/* #root {
-} */
 
 .center_div_res {
   padding: 3.5rem 0 1.5rem 0;
@@ -66,10 +91,6 @@ body {
   right: 2.2rem;
   font-size: 0.7rem;
   cursor: pointer;
-}
-
-img {
-  object-fit: contain;
 }
 
 a {
@@ -136,11 +157,6 @@ textarea:focus {
   flex-direction: column;
 }
 
-#PageIndex_container {
-  height: 35rem;
-  display: flex;
-}
-
 #PlaceRegister_res {
   flex: 30 1 0;
 }
@@ -154,12 +170,20 @@ textarea:focus {
   flex-direction: column;
 }
 
+.responsive_flex_r2c {
+  display: flex;
+}
+
 .flex5 {
   flex: 5 1 0;
 }
 
 .flex10 {
   flex: 10 1 0;
+}
+
+.flex15 {
+  flex: 15 1 0;
 }
 
 .flex20 {
@@ -209,6 +233,7 @@ textarea:focus {
 }
 
 #imageDiv {
+  object-fit: contain;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -219,6 +244,12 @@ textarea:focus {
 
 .relative {
   position: relative;
+}
+
+.absRB {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .display_none {
@@ -316,6 +347,9 @@ textarea:focus {
 }
 
 @media (max-width: 500px) {
+  /* ! */
+
+  /* ! */
   #PlaceRegister_res {
     display: none;
   }
@@ -326,6 +360,11 @@ textarea:focus {
 
   .responsive_flex_c2r {
     display: flex;
+  }
+
+  .responsive_flex_r2c {
+    display: flex;
+    flex-direction: column;
   }
 
   .absolute_nav_r1_res {
