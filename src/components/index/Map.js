@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
+import React from 'react';
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps';
 import Geolocation from './Geolocation';
 
 function Map({ geolocation, setGeolocation, setIsMobileRegister, places }) {
-  // const [places, setPlaces] = useState(null); // ! check
-
-  // const history = useHistory();
-
   return (
     <div className="flex70">
       <RenderAfterNavermapsLoaded

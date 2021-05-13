@@ -8,7 +8,7 @@ import axios from 'axios';
 function PageUser({}) {
   const [geolocation, setGeolocation] = useState({ lat: 0, lng: 0 });
   const [isMobileRegister, setIsMobileRegister] = useState(false);
-  const [places, setPlaces] = useState(null);
+  const [places, setPlaces] = useState('waiting');
   const [isOwner, setIsOwner] = useState(false);
 
   const match = useRouteMatch(); // const { path, url, params } = useRouteMatch();
@@ -51,6 +51,8 @@ function PageUser({}) {
 
   return match.params.account[0] !== '@' ? (
     <Redirect to="/" />
+  ) : places === 'waiting' ? (
+    <div className="display_none"></div>
   ) : (
     <div id="PageIndex_container">
       <MobilePlaceRegister
