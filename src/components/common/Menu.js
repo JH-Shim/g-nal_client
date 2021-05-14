@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-// import axios from 'axios';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 function Menu({ isLogin, setIsLogin, isMenu, setIsMenu }) {
   const history = useHistory();
@@ -41,7 +40,18 @@ function Menu({ isLogin, setIsLogin, isMenu, setIsMenu }) {
             <span className="inline_block_l">로그인</span>
           </div>
         )}
-
+        <div
+          onClick={() => {
+            setIsMenu(false);
+            if (isLogin) {
+              history.push(`/@${sessionStorage.getItem('account')}`);
+            } else {
+              history.push('/accounts/signin');
+            }
+          }}
+        >
+          <span className="inline_block_l">나의 기록</span>
+        </div>
         <div
           onClick={() => {
             setIsMenu(false);
@@ -51,18 +61,6 @@ function Menu({ isLogin, setIsLogin, isMenu, setIsMenu }) {
           }}
         >
           <span className="inline_block_l">마이페이지</span>
-        </div>
-        <div
-          onClick={() => {
-            setIsMenu(false);
-            if (sessionStorage.getItem('account')) {
-              history.push(`/@${sessionStorage.getItem('account')}`);
-            } else {
-              history.push('/');
-            }
-          }}
-        >
-          <span className="inline_block_l">지도</span>
         </div>
       </div>
     </div>

@@ -1,11 +1,7 @@
 import React from 'react';
-// import { Link, useHistory } from 'react-router-dom';
-// import axios from 'axios';
 import { handleKeyDown } from '../../modules/common';
 
 function Footer({}) {
-  // const history = useHistory();
-
   return (
     <div className="rem7 footer container_grid center_grid">
       <div

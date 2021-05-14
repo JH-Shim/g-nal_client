@@ -54,9 +54,9 @@ function PageUser({}) {
   return match.params.account[0] !== '@' ? (
     <Redirect to="/" />
   ) : places === 'waiting' ? (
-    <div className="responsive_flex_r2c rem35"></div>
+    <div id="PageUser_res"></div>
   ) : (
-    <div className="responsive_flex_r2c rem35">
+    <div id="PageUser_res">
       <Map
         geolocation={geolocation}
         setGeolocation={setGeolocation}
