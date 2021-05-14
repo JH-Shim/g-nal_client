@@ -51,9 +51,9 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div className="rem35 container_grid center_grid bg_contrast">
-        <div className="center_div_res container_flex_column">
-          <div className="flex10 container_padding">
+      <div className="rem35 CT_grid center_grid bg_contrast">
+        <div className="center_div_res CT_flex_column">
+          <div className="flex10 CT_padding">
             <input
               className="hw100"
               placeholder="아이디"
@@ -61,7 +61,7 @@ class SignUp extends React.Component {
               onKeyDown={handleKeyDown('Enter', this.handleSignUp)}
             ></input>
           </div>
-          <div className="flex10 container_padding">
+          <div className="flex10 CT_padding">
             <input
               className="hw100"
               placeholder="닉네임"
@@ -69,7 +69,7 @@ class SignUp extends React.Component {
               onKeyDown={handleKeyDown('Enter', this.handleSignUp)}
             ></input>
           </div>
-          <div className="flex10 container_padding relative">
+          <div className="flex10 CT_padding relative">
             <input
               className="hw100"
               placeholder="비밀번호"
@@ -108,9 +108,9 @@ class SignUp extends React.Component {
               숨기기
             </span>
           </div>
-          <div className="flex10 container_padding">
+          <div className="flex10 CT_padding">
             <div
-              className="hw100 bg_eee container_grid center_grid pointer"
+              className="hw100 bg_eee CT_grid center_grid pointer"
               onClick={this.handleSignUp}
               tabIndex="0"
               onKeyDown={handleKeyDown('Enter', this.handleSignUp)}

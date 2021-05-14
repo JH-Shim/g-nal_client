@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect, useHistory, useRouteMatch } from 'react-router-dom';
-import Map from '../components/index/Map';
-import PlaceRegister from '../components/index/PlaceRegister';
-import MobilePlaceRegister from '../components/index/MobilePlaceRegister';
-import PlaceList from '../components/index/PlaceList';
+import Map from '../components/user/Map';
+import PlaceRegister from '../components/user/PlaceRegister';
+import MobilePlaceRegister from '../components/user/MobilePlaceRegister';
+import PlaceList from '../components/user/PlaceList';
 import axios from 'axios';
 
 function PageUser({}) {
@@ -26,22 +26,19 @@ function PageUser({}) {
   const getPlaces = () => {
     // ! check axios server
     axios
-      .post(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/place`,
-        {
-          // .post(
-          //   `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/place`,
-          //   {
-          urlAccount,
-        },
-        { headers: { authorization: sessionStorage.getItem('accessToken') } },
-      )
+      .get(`${process.env.REACT_APP_SERVER_DOMAIN}/place`, {
+        // .get(
+        //   `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/place`,
+        //   {
+        params: { urlAccount },
+        headers: { authorization: sessionStorage.getItem('accessToken') },
+      })
       .then((res) => {
         if (res.data.message === 'invalid token') {
-          return history.push('/'); // ! check error message
+          return history.push('/accounts/signin');
         } else if (res.data.message === 'no such account') {
           alert('존재하지 않는 유저입니다.');
-          return history.push('/'); // ! check error message
+          return history.push('/');
         } else if (res.data.message === '!owner') {
           setPlaces(res.data.placeInfo);
         } else {

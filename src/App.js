@@ -14,6 +14,7 @@ import PageIndex from './pages/PageIndex';
 import PageAccounts from './pages/PageAccounts';
 import PageMyPage from './pages/PageMyPage';
 import PageEasterEgg from './pages/PageEasterEgg';
+import PagePlace from './pages/PagePlace';
 import PageUser from './pages/PageUser';
 import { fakeData } from './fakeData/fakeData';
 
@@ -52,6 +53,9 @@ function App() {
         </Route>
         <Route path="/easteregg">
           <PageEasterEgg />
+        </Route>
+        <Route path="/:account/:placeId">
+          <PagePlace />
         </Route>
         <Route path="/:account">
           <PageUser />

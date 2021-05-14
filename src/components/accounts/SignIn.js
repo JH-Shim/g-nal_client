@@ -52,11 +52,11 @@ class SignIn extends React.Component {
     return this.props.isLogin ? (
       <Redirect to="/" /> // ! check 로그인 상태에서 새로고침 시, 다시 SignIn 페이지로 오는 문제에 대응하기 위한 코드. 여기서 알 수 있는 것은, 상태가 변화하여 re-rendering이 된다고 할지라도 Switch를 다시 돌지는 않는다는 것.
     ) : (
-      <div className="rem35 container_grid center_grid bg_contrast">
-        <div className="container_flex_column center_div_res_container">
-          <div className="signin_up flex80 container_flex_column">
+      <div className="rem35 CT_grid center_grid bg_contrast">
+        <div className="CT_flex_column center_div_res_CT">
+          <div className="signin_up flex80 CT_flex_column">
             <div className="flex10"></div>
-            <div className="flex10 container_padding">
+            <div className="flex10 CT_padding">
               <input
                 className="hw100"
                 placeholder="아이디"
@@ -64,7 +64,7 @@ class SignIn extends React.Component {
                 onKeyDown={handleKeyDown('Enter', this.handleSignIn)}
               ></input>
             </div>
-            <div className="flex10 container_padding">
+            <div className="flex10 CT_padding">
               <input
                 className="hw100"
                 placeholder="비밀번호"
@@ -73,9 +73,9 @@ class SignIn extends React.Component {
                 onKeyDown={handleKeyDown('Enter', this.handleSignIn)}
               ></input>
             </div>
-            <div className="flex10 container_padding">
+            <div className="flex10 CT_padding">
               <div
-                className="hw100 bg_eee container_grid center_grid pointer"
+                className="hw100 bg_eee CT_grid center_grid pointer"
                 onClick={this.handleSignIn}
                 tabIndex="0"
                 onKeyDown={handleKeyDown('Enter', this.handleSignIn)}
@@ -85,7 +85,7 @@ class SignIn extends React.Component {
             </div>
           </div>
           <div
-            className="signin_down flex20 container_grid center_grid"
+            className="signin_down flex20 CT_grid center_grid"
             onClick={() => {
               this.props.history.push('/accounts/signup');
             }}

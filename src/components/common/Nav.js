@@ -5,7 +5,7 @@ function Nav({ isLogin, setIsLogin, setIsMenu }) {
   const history = useHistory();
 
   return (
-    <div className="rem5 sticky_nav container_grid center_grid">
+    <div className="rem5 sticky_nav CT_grid center_grid">
       <span className="absolute_nav_l_res" onClick={() => setIsMenu(true)}>
         ☰
       </span>

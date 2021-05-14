@@ -82,7 +82,7 @@ class MobilePlaceRegister extends React.Component {
         }
         className="MobilePlaceRegister_res"
       >
-        <div className="rem5 container_grid center_grid sticky_nav">
+        <div className="rem5 CT_grid center_grid sticky_nav">
           <span
             className="absolute_nav_l"
             onClick={() => this.props.setIsMobileRegister(false)}
@@ -90,9 +90,9 @@ class MobilePlaceRegister extends React.Component {
             ✕
           </span>
         </div>
-        <div className="rem35 container_flex_column container_padding_1rem">
+        <div className="rem35 CT_flex_column CT_padding_1rem">
           <div
-            id="imageDiv_container"
+            id="imageDiv_CT"
             onClick={() => {
               let imageInputMobile = document.querySelector(
                 '#imageInputMobile',
@@ -125,7 +125,7 @@ class MobilePlaceRegister extends React.Component {
             onChange={handleInputValue.call(this, 'placeDescription')}
           />
           <div
-            className="flex20 container_grid center_grid bg_212 pointer"
+            className="flex20 CT_grid center_grid bg_212 pointer"
             onClick={this.handlePlaceSubmit}
             tabIndex="0"
             onKeyDown={handleKeyDown('Enter', this.handlePlaceSubmit)}
@@ -145,7 +145,7 @@ class MobilePlaceRegister extends React.Component {
 //     <div
 //       id={isMobileRegister ? 'MobileRegister_open' : 'MobileRegister_closed'}
 //     >
-//       <div className="rem5 container_grid center_grid sticky_nav">
+//       <div className="rem5 CT_grid center_grid sticky_nav">
 //         <span
 //           className="absolute_nav_l"
 //           onClick={() => setIsMobileRegister(false)}

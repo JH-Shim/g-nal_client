@@ -3,7 +3,7 @@ import { handleKeyDown } from '../../modules/common';
 
 function Footer({}) {
   return (
-    <div className="rem7 footer container_grid center_grid">
+    <div className="rem7 footer CT_grid center_grid">
       <div
         className="pointer"
         onClick={() => {
