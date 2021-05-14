@@ -3,6 +3,30 @@
   outline: none;
 }
 
+.asdf {
+  border: 1px solid red;
+}
+
+.PlaceDes1 {
+  float: right;
+  height: 1.5rem;
+  border-bottom: solid 1px rgb(212, 212, 212);
+}
+
+.PlaceDes2 {
+  margin-top: 1.5rem;
+}
+
+.comment {
+  margin-top: 1.5rem;
+  width: 100%;
+  border-bottom: solid 1px rgb(212, 212, 212);
+}
+
+.commentC {
+  float: right;
+}
+
 #Place_res {
   height: 35rem;
   display: flex;
@@ -11,17 +35,19 @@
 
 #PlaceImgCT_res {
   flex: 60 1 0;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 1rem;
 }
+
 #PlaceImg_res {
   object-fit: contain;
   height: 100%;
   width: 100%;
 }
+
 #PlaceDes_res {
   flex: 40 1 0;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 1rem;
 }
 /* ! ========================================= */
@@ -391,7 +417,11 @@ textarea:focus {
 
 @media (max-width: 700px) {
   /* ! */
-
+  #Place_res {
+    display: block;
+    padding: 1rem;
+    min-height: 35rem;
+  }
   /* ! */
   #PlaceRegister_res {
     display: none;
