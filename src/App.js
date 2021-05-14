@@ -5,7 +5,6 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import axios from 'axios';
 
 import './App.css';
 import Menu from './components/common/Menu';
@@ -58,7 +57,11 @@ function App() {
           <PageUser />
         </Route>
       </Switch>
-      <Footer />
+      {window.innerWidth > 700 ? (
+        <Footer />
+      ) : (
+        <div className="display_none"></div>
+      )}
     </Router>
   );
 }

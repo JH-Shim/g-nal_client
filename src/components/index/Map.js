@@ -11,7 +11,7 @@ function Map({
   isOwner,
 }) {
   return (
-    <div className="flex70">
+    <div id="Map_res">
       <RenderAfterNavermapsLoaded
         ncpClientId={process.env.REACT_APP_NAVER_MAP_NCPCLIENTID}
         error={<p>Maps Load Error</p>}
@@ -38,7 +38,7 @@ function Map({
             animation={1}
             onClick={() => {
               if (isOwner) {
-                if (window.innerWidth > 500) {
+                if (window.innerWidth > 700) {
                   setIsRegister(true);
                 } else {
                   setIsMobileRegister(true);
