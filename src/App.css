@@ -173,7 +173,6 @@ textarea:focus {
 }
 
 .PLEdiv {
-  position: relative;
   text-align: right;
   flex: 10 1 0;
 }
