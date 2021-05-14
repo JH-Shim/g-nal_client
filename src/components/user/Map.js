@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps';
 import Geolocation from './Geolocation';
 
@@ -12,6 +13,8 @@ function Map({
   places,
   isOwner,
 }) {
+  const history = useHistory();
+
   return (
     <div id="Map_res">
       <RenderAfterNavermapsLoaded
@@ -26,7 +29,7 @@ function Map({
             width: '100%',
             height: '100%',
           }}
-          defaultZoom={12}
+          defaultZoom={15}
           center={geoListClick.lat !== 0 ? geoListClick : geolocation}
           // defaultCenter={geolocation} // ! check center와의 차이
           onClick={(e) => {
@@ -61,7 +64,11 @@ function Map({
                     lat: place.lat,
                     lng: place.lng,
                   }}
-                  // onClick={() => {}} // ! check onClick.
+                  onClick={() => {
+                    history.push(
+                      `/@${sessionStorage.getItem('account')}/${place.id}`,
+                    );
+                  }} // ! check onClick.
                 />
               ))}
             </div>

@@ -79,12 +79,9 @@ class PlaceRegister extends React.Component {
     return !this.props.isRegister ? (
       <div className="display_none"></div>
     ) : (
-      <div
-        id="PlaceRegister_res"
-        className="container_flex_column container_padding_1rem"
-      >
+      <div id="PlaceRegister_res" className="CT_flex_column CT_padding_1rem">
         <div
-          id="imageDiv_container"
+          id="imageDiv_CT"
           onClick={() => {
             let imageInput = document.querySelector('#imageInput');
             imageInput.click();
@@ -115,7 +112,7 @@ class PlaceRegister extends React.Component {
           onChange={handleInputValue.call(this, 'placeDescription')}
         />
         <div
-          className="flex20 container_grid center_grid bg_212 pointer"
+          className="flex20 CT_grid center_grid bg_212 pointer"
           onClick={this.handlePlaceSubmit}
           tabIndex="0"
           onKeyDown={handleKeyDown('Enter', this.handlePlaceSubmit)}

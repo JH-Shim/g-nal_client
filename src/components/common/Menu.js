@@ -6,7 +6,7 @@ function Menu({ isLogin, setIsLogin, isMenu, setIsMenu }) {
 
   return (
     <div id={isMenu ? 'Menu_open' : 'Menu_closed'}>
-      <div className="rem5 container_grid center_grid sticky_nav">
+      <div className="rem5 CT_grid center_grid sticky_nav">
         <span className="absolute_nav_l" onClick={() => setIsMenu(false)}>
           ✕
         </span>
