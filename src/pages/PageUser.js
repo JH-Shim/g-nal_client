@@ -8,6 +8,7 @@ import axios from 'axios';
 
 function PageUser({}) {
   const [geolocation, setGeolocation] = useState({ lat: 0, lng: 0 });
+  const [geoListClick, setGeoListClick] = useState({ lat: 0, lng: 0 });
   const [isRegister, setIsRegister] = useState(false);
   const [isMobileRegister, setIsMobileRegister] = useState(false);
   const [places, setPlaces] = useState('waiting');
@@ -59,6 +60,8 @@ function PageUser({}) {
     <div id="PageUser_res">
       <Map
         geolocation={geolocation}
+        geoListClick={geoListClick}
+        setGeoListClick={setGeoListClick}
         setGeolocation={setGeolocation}
         setIsRegister={setIsRegister}
         setIsMobileRegister={setIsMobileRegister}
@@ -71,7 +74,11 @@ function PageUser({}) {
         isMobileRegister={isMobileRegister}
         setIsMobileRegister={setIsMobileRegister}
       />
-      <PlaceList isRegister={isRegister} places={places} />
+      <PlaceList
+        setGeoListClick={setGeoListClick}
+        isRegister={isRegister}
+        places={places}
+      />
     </div>
   );
 }

@@ -5,6 +5,8 @@ import Geolocation from './Geolocation';
 function Map({
   geolocation,
   setGeolocation,
+  geoListClick,
+  setGeoListClick,
   setIsRegister,
   setIsMobileRegister,
   places,
@@ -25,12 +27,13 @@ function Map({
             height: '100%',
           }}
           defaultZoom={12}
-          center={geolocation}
+          center={geoListClick.lat !== 0 ? geoListClick : geolocation}
           // defaultCenter={geolocation} // ! check center와의 차이
           onClick={(e) => {
             // ! console.log(e);
             // ! console.log(e.coord);
             setGeolocation({ lat: e.coord._lat, lng: e.coord._lng });
+            setGeoListClick({ lat: 0, lng: 0 });
           }}
         >
           <Marker
@@ -52,6 +55,7 @@ function Map({
             <div>
               {places.map((place) => (
                 <Marker
+                  animation={geoListClick.lat === place.lat ? 1 : 0}
                   key={place.id}
                   position={{
                     lat: place.lat,

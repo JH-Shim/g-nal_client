@@ -1,14 +1,19 @@
 import React from 'react';
 
-function PlaceListElement({ place }) {
+function PlaceListElement({ setGeoListClick, place }) {
   return (
     // <span>123123123123123123</span> // ! check
-    <div key={place.id} className="PlaceListElement">
+    <div
+      key={place.id}
+      className="PlaceListElement"
+      onClick={() => {
+        setGeoListClick({ lat: place.lat, lng: place.lng });
+      }}
+    >
       <img src={place.placePhoto} className="PLEimg flex10" />
       <div className="PLEdiv">
         <div>{place.createdAt}</div>
         <div>{place.placeName}</div>
-        <div className="absRB">자세히 보기</div>
       </div>
     </div>
   );
