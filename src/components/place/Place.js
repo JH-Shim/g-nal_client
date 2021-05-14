@@ -9,10 +9,15 @@ function Place({ placeInfo, isOwner }) {
         <img src={placeInfo.placePhoto} id="PlaceImg_res" />
       </div>
       <div id="PlaceDes_res" className="scroll">
-        <div>{placeInfo.nickname}</div>
-        <div>{placeInfo.placeName}</div>
-        <div>{placeInfo.placeDescription}</div>
-        <div>{placeInfo.createdAt}</div>
+        <div className="PlaceDes1">
+          {placeInfo.nickname} 님의 {placeInfo.createdAt}
+        </div>
+        <div className="PlaceDes2">장소 이름 : {placeInfo.placeName}</div>
+        <div className="PlaceDes2">
+          장소 설명 : {placeInfo.placeDescription}
+        </div>
+        <textarea placeholder="comment..." className="comment"></textarea>
+        <span className="commentC">등록</span>
       </div>
     </div>
   );
