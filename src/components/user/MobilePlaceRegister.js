@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
 import axios from 'axios';
 import {
   handleInputValue,
   handleFileUpload,
   handleKeyDown,
 } from '../../modules/common';
+import Loading from '../common/Loading';
 
 class MobilePlaceRegister extends React.Component {
   constructor(props) {
@@ -15,6 +15,7 @@ class MobilePlaceRegister extends React.Component {
       imgBase64: '',
       placeName: '',
       placeDescription: '',
+      isLoading: false,
     };
   }
 
@@ -63,7 +64,8 @@ class MobilePlaceRegister extends React.Component {
       )
       .then((res) => {
         if (res.data.message === 'place uploaded') {
-          alert('그날의 공기를 기록하였습니다.');
+          this.setState({ isLoading: true });
+          // alert('그날의 공기를 기록하였습니다.');
           window.location.reload();
         } else {
           alert('기록되지 않았습니다.');
@@ -82,6 +84,11 @@ class MobilePlaceRegister extends React.Component {
         }
         className="MobilePlaceRegister_res"
       >
+        {this.state.isLoading ? (
+          <Loading />
+        ) : (
+          <div className="display_none"></div>
+        )}
         <div className="rem5 CT_grid center_grid sticky_nav">
           <span
             className="absolute_nav_l"
