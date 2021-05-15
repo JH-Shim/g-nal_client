@@ -1,12 +1,20 @@
 import React from 'react';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 
-function PlaceListElement({ setGeoListClick, place }) {
+function PlaceListElement({ geoListClick, setGeoListClick, place }) {
+  const history = useHistory();
+  const match = useRouteMatch();
+  const urlAccount = match.params.account;
+
   return (
     // <span>123123123123123123</span> // ! check
     <div
       key={place.id}
       className="PlaceListElement"
       onClick={() => {
+        if (geoListClick.lat === place.lat && geoListClick.lng === place.lng) {
+          history.push(`/${urlAccount}/${place.id}`);
+        }
         setGeoListClick({ lat: place.lat, lng: place.lng });
       }}
     >

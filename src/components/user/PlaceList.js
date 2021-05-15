@@ -1,7 +1,7 @@
 import React from 'react';
 import PlaceListElement from './PlaceListElement';
 
-function PlaceList({ setGeoListClick, isRegister, places }) {
+function PlaceList({ geoListClick, setGeoListClick, isRegister, places }) {
   return isRegister ? (
     <div className="display_none"></div>
   ) : (
@@ -12,6 +12,7 @@ function PlaceList({ setGeoListClick, isRegister, places }) {
         places.map((place) => (
           <PlaceListElement
             key={place.id}
+            geoListClick={geoListClick}
             setGeoListClick={setGeoListClick}
             place={place}
           />

@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 function Nav({ isLogin, setIsLogin, setIsMenu }) {
   const history = useHistory();
+  const location = useLocation();
+  const path = location.pathname.slice(1);
 
   return (
     <div className="rem5 sticky_nav CT_grid center_grid">
@@ -10,7 +12,19 @@ function Nav({ isLogin, setIsLogin, setIsMenu }) {
         ☰
       </span>
       <span id="logo_res">
-        <Link to="/">그날의 공기</Link>
+        <Link
+          to={
+            path[0] !== '@' && sessionStorage.getItem('account')
+              ? `/@${sessionStorage.getItem('account')}`
+              : path[0] !== '@'
+              ? '/'
+              : path.indexOf('/') === -1
+              ? `${path}`
+              : `/${path.slice(0, path.indexOf('/'))}`
+          }
+        >
+          그날의 공기
+        </Link>
       </span>
       <span className="absolute_nav_r1_res">
         <Link
