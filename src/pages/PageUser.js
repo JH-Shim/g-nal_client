@@ -72,6 +72,7 @@ function PageUser({}) {
         setIsMobileRegister={setIsMobileRegister}
       />
       <PlaceList
+        geoListClick={geoListClick}
         setGeoListClick={setGeoListClick}
         isRegister={isRegister}
         places={places}

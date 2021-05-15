@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps';
 import Geolocation from './Geolocation';
 
@@ -14,6 +14,8 @@ function Map({
   isOwner,
 }) {
   const history = useHistory();
+  const match = useRouteMatch();
+  const urlAccount = match.params.account;
 
   return (
     <div id="Map_res">
@@ -65,9 +67,7 @@ function Map({
                     lng: place.lng,
                   }}
                   onClick={() => {
-                    history.push(
-                      `/@${sessionStorage.getItem('account')}/${place.id}`,
-                    );
+                    history.push(`/${urlAccount}/${place.id}`);
                   }} // ! check onClick.
                 />
               ))}
