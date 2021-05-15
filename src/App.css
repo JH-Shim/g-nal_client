@@ -419,7 +419,7 @@ textarea:focus {
   /* ! */
   #Place_res {
     display: block;
-    padding: 1rem;
+    padding: 0;
     min-height: 35rem;
   }
   /* ! */
