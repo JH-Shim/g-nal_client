@@ -3,8 +3,17 @@
   outline: none;
 }
 
-.asdf {
-  border: 1px solid red;
+#Loading {
+  color: white;
+  font-size: 2rem;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  background-color: black;
+  opacity: 0.5;
+  height: 100vh;
+  width: 100vw;
+  z-index: 103;
 }
 
 .PlaceDes1 {
