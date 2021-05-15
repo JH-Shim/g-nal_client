@@ -5,6 +5,7 @@ import {
   handleFileUpload,
   handleKeyDown,
 } from '../../modules/common';
+import Loading from '../common/Loading';
 
 // axios.defaults.headers.common['authorization'] = sessionStorage.getItem(
 //   'accessToken', // ! check 위치
@@ -18,6 +19,7 @@ class PlaceRegister extends React.Component {
       imgBase64: '',
       placeName: '',
       placeDescription: '',
+      isLoading: false,
     };
   }
 
@@ -38,6 +40,8 @@ class PlaceRegister extends React.Component {
   };
 
   handlePlaceSubmit = () => {
+    this.setState({ isLoading: true });
+
     const { file, placeName, placeDescription } = this.state;
 
     if (!placeName || !placeDescription) {
@@ -66,7 +70,7 @@ class PlaceRegister extends React.Component {
       )
       .then((res) => {
         if (res.data.message === 'place uploaded') {
-          alert('그날의 공기를 기록하였습니다.');
+          // alert('그날의 공기를 기록하였습니다.');
           window.location.reload();
         } else {
           alert('기록되지 않았습니다.');
@@ -80,6 +84,11 @@ class PlaceRegister extends React.Component {
       <div className="display_none"></div>
     ) : (
       <div id="PlaceRegister_res" className="CT_flex_column CT_padding_1rem">
+        {this.state.isLoading ? (
+          <Loading />
+        ) : (
+          <div className="display_none"></div>
+        )}
         <div
           id="imageDiv_CT"
           onClick={() => {

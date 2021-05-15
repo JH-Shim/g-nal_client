@@ -36,6 +36,8 @@ class MobilePlaceRegister extends React.Component {
   };
 
   handlePlaceSubmit = () => {
+    this.setState({ isLoading: true });
+
     const { file, placeName, placeDescription } = this.state;
 
     if (!placeName || !placeDescription) {
@@ -64,7 +66,6 @@ class MobilePlaceRegister extends React.Component {
       )
       .then((res) => {
         if (res.data.message === 'place uploaded') {
-          this.setState({ isLoading: true });
           // alert('그날의 공기를 기록하였습니다.');
           window.location.reload();
         } else {
