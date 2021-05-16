@@ -14,6 +14,7 @@ function PagePlace({}) {
   const history = useHistory();
 
   useEffect(async () => {
+    window.scrollTo(0, 0);
     getPlaceInfo();
   }, []);
 
