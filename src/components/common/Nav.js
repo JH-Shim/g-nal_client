@@ -8,7 +8,13 @@ function Nav({ isLogin, setIsLogin, setIsMenu }) {
 
   return (
     <div className="rem5 sticky_nav CT_grid center_grid">
-      <span className="absolute_nav_l_res" onClick={() => setIsMenu(true)}>
+      <span
+        className="absolute_nav_l_res"
+        onClick={() => {
+          window.scrollTo(0, 0);
+          setIsMenu(true);
+        }}
+      >
         ☰
       </span>
       <span id="logo_res">

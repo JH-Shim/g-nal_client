@@ -17,7 +17,7 @@ function Menu({ isLogin, setIsLogin, isMenu, setIsMenu }) {
           성함
         </span>
       </div>
-      <div className="rem35">
+      <div className="height2">
         {isLogin ? (
           <div
             onClick={() => {

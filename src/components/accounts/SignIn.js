@@ -52,7 +52,7 @@ class SignIn extends React.Component {
     return this.props.isLogin ? (
       <Redirect to="/" /> // ! check 로그인 상태에서 새로고침 시, 다시 SignIn 페이지로 오는 문제에 대응하기 위한 코드. 여기서 알 수 있는 것은, 상태가 변화하여 re-rendering이 된다고 할지라도 Switch를 다시 돌지는 않는다는 것.
     ) : (
-      <div className="rem35 CT_grid center_grid bg_contrast">
+      <div className="height1 CT_grid center_grid bg_contrast">
         <div className="CT_flex_column center_div_res_CT">
           <div className="signin_up flex80 CT_flex_column">
             <div className="flex10"></div>

@@ -98,7 +98,7 @@ class MobilePlaceRegister extends React.Component {
             ✕
           </span>
         </div>
-        <div className="rem35 CT_flex_column CT_padding_1rem">
+        <div className="height3 CT_flex_column CT_padding_1rem">
           <div
             id="imageDiv_CT"
             onClick={() => {
@@ -161,7 +161,7 @@ class MobilePlaceRegister extends React.Component {
 //           ✕
 //         </span>
 //       </div>
-//       <div className="rem35"></div>
+//       <div className="height3"></div>
 //     </div>
 //   );
 // }

@@ -51,7 +51,7 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div className="rem35 CT_grid center_grid bg_contrast">
+      <div className="height1 CT_grid center_grid bg_contrast">
         <div className="center_div_res CT_flex_column">
           <div className="flex10 CT_padding">
             <input
