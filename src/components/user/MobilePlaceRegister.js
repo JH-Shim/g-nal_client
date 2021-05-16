@@ -111,7 +111,7 @@ class MobilePlaceRegister extends React.Component {
             {this.state.imgBase64 ? (
               <img id="imageDiv" src={this.state.imgBase64} />
             ) : (
-              <div id="imageDiv">클릭하여 사진등록</div>
+              <div id="imageDiv">클릭하여 사진 등록</div>
             )}
           </div>
           <input

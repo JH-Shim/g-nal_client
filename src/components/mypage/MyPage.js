@@ -4,7 +4,7 @@ import React from 'react';
 function MyPage({}) {
   // const history = useHistory();
 
-  return <div className="height1">마이페이지(일촌 명단)</div>;
+  return <div className="height1">마이페이지(친구 추가 준비 중)</div>;
 }
 
 export default MyPage;

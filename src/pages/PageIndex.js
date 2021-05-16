@@ -4,7 +4,7 @@ import Footer from '../components/common/Footer';
 function PageIndex({}) {
   return (
     <div>
-      <div id="PageIndex_CT">tutorial page 준비중</div>
+      <div className="height1">tutorial page 준비 중</div>
       {window.innerWidth <= 700 ? (
         <Footer />
       ) : (
@@ -26,7 +26,7 @@ export default PageIndex;
 //   const [isMobileRegister, setIsMobileRegister] = useState(false);
 
 //   return (
-//     <div id="PageIndex_CT">
+//     <div className="height1">
 //       <MobilePlaceRegister
 //         geolocation={geolocation}
 //         isMobileRegister={isMobileRegister}
