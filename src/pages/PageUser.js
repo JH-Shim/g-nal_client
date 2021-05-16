@@ -66,7 +66,11 @@ function PageUser({}) {
         places={places}
         isOwner={isOwner}
       />
-      <PlaceRegister geolocation={geolocation} isRegister={isRegister} />
+      <PlaceRegister
+        geolocation={geolocation}
+        isRegister={isRegister}
+        setIsRegister={setIsRegister}
+      />
       <MobilePlaceRegister
         geolocation={geolocation}
         isMobileRegister={isMobileRegister}

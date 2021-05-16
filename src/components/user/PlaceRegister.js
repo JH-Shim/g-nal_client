@@ -83,50 +83,60 @@ class PlaceRegister extends React.Component {
     return !this.props.isRegister ? (
       <div className="display_none"></div>
     ) : (
-      <div id="PlaceRegister_res" className="CT_flex_column CT_padding_1rem">
-        {this.state.isLoading ? (
-          <Loading />
-        ) : (
-          <div className="display_none"></div>
-        )}
-        <div
-          id="imageDiv_CT"
-          onClick={() => {
-            let imageInput = document.querySelector('#imageInput');
-            imageInput.click();
-          }}
-        >
-          {this.state.imgBase64 ? (
-            <img id="imageDiv" src={this.state.imgBase64} />
+      <div id="PlaceRegister_res" className="CT_flex_column">
+        <div className="flex10 CT_flex_column CT_padding_1rem">
+          {this.state.isLoading ? (
+            <Loading />
           ) : (
-            <div id="imageDiv">클릭하여 사진등록</div>
+            <div className="display_none"></div>
           )}
-        </div>
-        <input
-          className="display_none"
-          id="imageInput"
-          type="file"
-          accept="image/*"
-          // onChange={handleFileUpload.bind(this)}
-          onChange={this.handleChangeFile}
-        />
-        <textarea
-          className="flex10"
-          placeholder="장소 이름"
-          onChange={handleInputValue.call(this, 'placeName')}
-        />
-        <textarea
-          className="flex20"
-          placeholder="장소 설명"
-          onChange={handleInputValue.call(this, 'placeDescription')}
-        />
-        <div
-          className="flex20 CT_grid center_grid bg_212 pointer"
-          onClick={this.handlePlaceSubmit}
-          tabIndex="0"
-          onKeyDown={handleKeyDown('Enter', this.handlePlaceSubmit)}
-        >
-          기록
+          <div
+            className="flex10 pointer"
+            onClick={() => {
+              this.props.setIsRegister(false);
+            }}
+          >
+            ✕
+          </div>
+          <div
+            id="imageDiv_CT"
+            onClick={() => {
+              let imageInput = document.querySelector('#imageInput');
+              imageInput.click();
+            }}
+          >
+            {this.state.imgBase64 ? (
+              <img id="imageDiv" src={this.state.imgBase64} />
+            ) : (
+              <div id="imageDiv">클릭하여 사진 등록</div>
+            )}
+          </div>
+          <input
+            className="display_none"
+            id="imageInput"
+            type="file"
+            accept="image/*"
+            // onChange={handleFileUpload.bind(this)}
+            onChange={this.handleChangeFile}
+          />
+          <textarea
+            className="flex10"
+            placeholder="장소 이름"
+            onChange={handleInputValue.call(this, 'placeName')}
+          />
+          <textarea
+            className="flex20"
+            placeholder="장소 설명"
+            onChange={handleInputValue.call(this, 'placeDescription')}
+          />
+          <div
+            className="flex20 CT_grid center_grid bg_212 pointer"
+            onClick={this.handlePlaceSubmit}
+            tabIndex="0"
+            onKeyDown={handleKeyDown('Enter', this.handlePlaceSubmit)}
+          >
+            기록
+          </div>
         </div>
       </div>
     );

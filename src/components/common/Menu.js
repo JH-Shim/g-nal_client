@@ -11,7 +11,7 @@ function Menu({ isLogin, setIsLogin, isMenu, setIsMenu }) {
           ✕
         </span>
         <span
-          className="absolute_nav_r"
+          className="absolute_nav_r display_none"
           onClick={() => alert('성함이 참 아름다우시네요.')}
         >
           성함
