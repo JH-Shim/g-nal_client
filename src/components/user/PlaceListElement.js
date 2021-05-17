@@ -7,7 +7,6 @@ function PlaceListElement({ geoListClick, setGeoListClick, place }) {
   const urlAccount = match.params.account;
 
   return (
-    // <span>123123123123123123</span> // ! check
     <div
       key={place.id}
       className="PlaceListElement"

@@ -8,7 +8,9 @@ function PlaceList({ geoListClick, setGeoListClick, isRegister, places }) {
       className={isRegister ? 'display_none scroll' : 'scroll'}
     >
       {places.length === 0 ? (
-        <div>아직 그날의 공기를 기록하지 않은 유저입니다.</div>
+        <div className="cenMa">
+          아직 그날의 공기를 기록하지 않은 유저입니다.
+        </div>
       ) : (
         places.map((place) => (
           <PlaceListElement
