@@ -335,6 +335,13 @@ textarea:focus {
   /* align-items: center; */
   /* justify-items: center; */
 }
+
+.cenMa {
+  margin-top: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+
 /* ! ===================================== */
 
 /* .text_center {

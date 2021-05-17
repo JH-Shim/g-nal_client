@@ -65,14 +65,12 @@ function Map({
         )}
 
         <NaverMap
-          // mapDivId={'naver_map'} // default: react-naver-map
           style={{
             width: '100%',
             height: '100%',
           }}
           defaultZoom={15}
           center={geoListClick.lat !== 0 ? geoListClick : geolocation}
-          // defaultCenter={geolocation} // ! check center와의 차이
           onClick={(e) => {
             // ! check 반경 1km 안으로 제한
             // ! console.log(e);
@@ -96,7 +94,7 @@ function Map({
             }}
           />
           {!places ? (
-            <div className="display_none"></div> // ! check
+            <div className="display_none"></div>
           ) : (
             <div>
               {places.map((place) => (
@@ -109,7 +107,7 @@ function Map({
                   }}
                   onClick={() => {
                     history.push(`/${urlAccount}/${place.id}`);
-                  }} // ! check onClick.
+                  }}
                 />
               ))}
             </div>
