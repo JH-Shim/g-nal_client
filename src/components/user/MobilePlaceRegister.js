@@ -55,12 +55,12 @@ class MobilePlaceRegister extends React.Component {
     formData.append('lat', this.props.geolocation.lat);
     formData.append('lng', this.props.geolocation.lng);
 
-    // ! check axios server
+    // ! check axios local
     axios
+      // .post(
+      //   `${process.env.REACT_APP_SERVER_DOMAIN}/image/place`,
       .post(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/image/place`,
-        // .post(
-        //   `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/image/place`,
+        `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/image/place`,
         formData,
         { headers: { authorization: sessionStorage.getItem('accessToken') } },
       )
