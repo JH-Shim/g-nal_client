@@ -19,15 +19,16 @@ function PagePlace({}) {
   }, []);
 
   const getPlaceInfo = () => {
-    // ! check axios server
+    // ! check axios local
     axios
-      .get(`${process.env.REACT_APP_SERVER_DOMAIN}/place/${placeId}`, {
-        // .get(
-        //   `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/place/${placeId}`,
-        //   {
-        params: { urlAccount },
-        headers: { authorization: sessionStorage.getItem('accessToken') },
-      })
+      // .get(`${process.env.REACT_APP_SERVER_DOMAIN}/place/${placeId}`, {
+      .get(
+        `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/place/${placeId}`,
+        {
+          params: { urlAccount },
+          headers: { authorization: sessionStorage.getItem('accessToken') },
+        },
+      )
       .then((res) => {
         if (res.data.message === 'invalid token') {
           return history.push('/accounts/signin');

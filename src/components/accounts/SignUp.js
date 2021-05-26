@@ -28,16 +28,17 @@ class SignUp extends React.Component {
       return;
     }
 
-    // ! check axios server
+    // ! check axios local
     axios
-      .post(`${process.env.REACT_APP_SERVER_DOMAIN}/accounts/signup`, {
-        // .post(
-        //   `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/accounts/signup`,
-        //   {
-        account: account,
-        nickname: nickname,
-        password: password,
-      })
+      // .post(`${process.env.REACT_APP_SERVER_DOMAIN}/accounts/signup`, {
+      .post(
+        `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/accounts/signup`,
+        {
+          account: account,
+          nickname: nickname,
+          password: password,
+        },
+      )
       .then((res) => {
         if (res.data.message !== 'sign up succeeded') {
           alert(res.data.message);

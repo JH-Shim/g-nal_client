@@ -25,15 +25,16 @@ function PageUser({}) {
   }, []);
 
   const getPlaces = () => {
-    // ! check axios server
+    // ! check axios local
     axios
-      .get(`${process.env.REACT_APP_SERVER_DOMAIN}/place`, {
-        // .get(
-        //   `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/place`,
-        //   {
-        params: { urlAccount },
-        headers: { authorization: sessionStorage.getItem('accessToken') },
-      })
+      // .get(`${process.env.REACT_APP_SERVER_DOMAIN}/place`, {
+      .get(
+        `http://localhost:${process.env.REACT_APP_LOCAL_SERVER_PORT}/place`,
+        {
+          params: { urlAccount },
+          headers: { authorization: sessionStorage.getItem('accessToken') },
+        },
+      )
       .then((res) => {
         if (res.data.message === 'invalid token') {
           return history.push('/accounts/signin');
