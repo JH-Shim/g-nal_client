@@ -54,14 +54,21 @@
   margin-top: 1.5rem;
 }
 
-.comment {
+#commentT {
   margin-top: 1.5rem;
   width: 100%;
   border-bottom: solid 1px rgb(212, 212, 212);
 }
 
-.commentC {
+#commentC {
   float: right;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+#comments {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 #Place_res {
@@ -72,7 +79,6 @@
 
 #PlaceImgCT_res {
   flex: 60 1 0;
-  /* border: 1px solid red; */
   margin: 1rem;
 }
 
@@ -84,7 +90,6 @@
 
 #PlaceDes_res {
   flex: 40 1 0;
-  /* border: 1px solid red; */
   margin: 1rem;
 }
 /* ! ========================================= */

@@ -39,9 +39,9 @@ function Nav({ isLogin, setIsLogin, setIsMenu }) {
         >
           나의 기록
         </Link>
-        <Link to="/mypage" className={isLogin ? '' : 'display_none'}>
+        {/* <Link to="/mypage" className={isLogin ? '' : 'display_none'}>
           마이페이지
-        </Link>
+        </Link> */}
         {isLogin ? (
           <Link
             to="/"
