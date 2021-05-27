@@ -60,7 +60,7 @@ function Menu({ isLogin, setIsLogin, isMenu, setIsMenu }) {
               : history.push('/accounts/signin');
           }}
         >
-          <span className="inline_block_l">마이페이지</span>
+          {/* <span className="inline_block_l">마이페이지</span> */}
         </div>
       </div>
     </div>
