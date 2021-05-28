@@ -9,6 +9,7 @@ class Place extends React.Component {
     super(props);
     this.state = {
       newComment: '',
+      comments: null,
     };
   }
   // ! check this.props.isOwner
@@ -36,7 +37,11 @@ class Place extends React.Component {
       )
       .then((res) => {
         if (res.data.message === 'comment added') {
-          window.location.reload();
+          document.querySelector('#commentT').value = '';
+          this.setState({
+            newComment: '',
+            comments: res.data.comments,
+          });
         }
       })
       .catch((err) => console.log(err));
@@ -75,7 +80,13 @@ class Place extends React.Component {
           >
             등록
           </div>
-          <PlaceComment comments={this.props.placeInfo.comments} />
+          <PlaceComment
+            comments={
+              !this.state.comments
+                ? this.props.placeInfo.comments
+                : this.state.comments
+            }
+          />
         </div>
       </div>
     );
